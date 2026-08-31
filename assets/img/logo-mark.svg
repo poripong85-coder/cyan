@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" role="img" aria-label="CYAN gallery house">
+  <g stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- house / gallery facade -->
+    <path d="M28 92 L100 30 L172 92" />
+    <path d="M44 92 V170 H156 V92" />
+    <!-- arched opening -->
+    <path d="M72 170 V132 a28 28 0 0 1 56 0 V170" />
+    <!-- floor line -->
+    <path d="M20 170 H180" />
+  </g>
+  <!-- light -->
+  <circle cx="100" cy="68" r="7" fill="currentColor" />
+</svg>

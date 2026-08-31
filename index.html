@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CYAN — gallery house</title>
+<meta name="description" content="시안 갤러리 하우스. 작은 공간에서 천천히 보는 전시.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CYAN — gallery house">
+<meta property="og:description" content="시안 갤러리 하우스. 작은 공간에서 천천히 보는 전시.">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<!-- ───────────────────────── header ───────────────────────── -->
+<header class="site-head" id="siteHead">
+  <div class="wrap head-in">
+    <a class="head-logo" href="#top" aria-label="CYAN 홈">
+      <span class="head-mark" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none">
+          <g stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 92 L100 30 L172 92"/><path d="M44 92 V170 H156 V92"/>
+            <path d="M72 170 V132 a28 28 0 0 1 56 0 V170"/>
+          </g>
+        </svg>
+      </span>
+      <span class="head-word">CYAN</span>
+    </a>
+
+    <nav class="head-nav" aria-label="주요 메뉴">
+      <a href="#exhibition">전시</a>
+      <a href="#about">소개</a>
+      <a href="#space">공간</a>
+      <a href="#visit">방문</a>
+      <a href="#links">링크</a>
+    </nav>
+
+    <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
+  <a href="#exhibition"><em>01</em> 전시</a>
+  <a href="#about"><em>02</em> 소개</a>
+  <a href="#space"><em>03</em> 공간</a>
+  <a href="#visit"><em>04</em> 방문</a>
+  <a href="#links"><em>05</em> 링크</a>
+</nav>
+
+<main id="main">
+
+<!-- ───────────────────────── hero ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-in">
+
+    <!-- ✏️ 로고 교체 지점 -->
+    <!-- 보유한 일러스트 파일이 있으면 아래 <svg> 블록을 통째로 지우고
+         <img class="hero-mark" src="assets/img/logo.png" alt="CYAN"> 로 바꾸면 됩니다. -->
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <g class="draw" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+          <path pathLength="1" d="M28 92 L100 30 L172 92"/>
+          <path pathLength="1" d="M44 92 V170 H156 V92"/>
+          <path pathLength="1" d="M72 170 V132 a28 28 0 0 1 56 0 V170"/>
+          <path pathLength="1" d="M20 170 H180"/>
+        </g>
+        <circle class="glow" cx="100" cy="68" r="6.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <h1 class="hero-word">
+      <span class="hero-word-main">CYAN</span>
+      <span class="hero-word-sub">gallery&nbsp;·&nbsp;house</span>
+    </h1>
+
+    <!-- ✏️ 한 줄 소개 -->
+    <p class="hero-tag">작은 집에서, 천천히 보는 전시</p>
+  </div>
+
+  <a class="hero-cue" href="#exhibition" aria-label="아래로 스크롤">
+    <span>지금 전시</span>
+    <i aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ───────────────────────── exhibition ───────────────────────── -->
+<section class="sect" id="exhibition">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Exhibition</p>
+    <h2 class="sect-title reveal">지금 전시</h2>
+
+    <!-- ✏️ 현재 전시 -->
+    <article class="show reveal">
+      <div class="show-visual">
+        <div class="frame frame--tall"></div>
+      </div>
+      <div class="show-body">
+        <p class="show-meta">2026. 08. 14 — 09. 28</p>
+        <h3 class="show-title">전시 제목을 적어주세요</h3>
+        <p class="show-artist">작가 이름</p>
+        <p class="show-text">
+          전시를 한 문단으로 소개해 주세요. 어떤 작업인지, 어떤 마음으로 보면 좋은지
+          정도만 적어도 충분합니다. 갤러리 사이트에서 글은 짧을수록 작품이 잘 보입니다.
+        </p>
+        <div class="show-actions">
+          <a class="btn" href="#links">관람 예약</a>
+          <a class="btn btn--ghost" href="#visit">관람 안내</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ✏️ 지난 / 예정 전시 -->
+    <ul class="showlist reveal">
+      <li>
+        <span class="showlist-date">2026. 10</span>
+        <span class="showlist-title">다음 전시 제목</span>
+        <span class="showlist-artist">작가 이름</span>
+        <span class="showlist-state">예정</span>
+      </li>
+      <li>
+        <span class="showlist-date">2026. 06</span>
+        <span class="showlist-title">지난 전시 제목</span>
+        <span class="showlist-artist">작가 이름</span>
+        <span class="showlist-state">종료</span>
+      </li>
+      <li>
+        <span class="showlist-date">2026. 04</span>
+        <span class="showlist-title">지난 전시 제목</span>
+        <span class="showlist-artist">작가 이름</span>
+        <span class="showlist-state">종료</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────────────────── about ───────────────────────── -->
+<section class="sect sect--tint" id="about">
+  <div class="wrap about">
+    <div class="about-side reveal">
+      <p class="sect-eyebrow">About</p>
+      <h2 class="sect-title">소개</h2>
+    </div>
+    <!-- ✏️ 소개 글 -->
+    <div class="about-body reveal">
+      <p class="lead">
+        CYAN은 집의 형태를 한 작은 갤러리입니다.
+      </p>
+      <p>
+        한 번에 한 사람의 작업을 걸고, 오래 봅니다. 넓지 않은 대신 조용하고,
+        작품과 관객 사이의 거리가 가깝습니다.
+      </p>
+      <p>
+        전시는 대체로 6주 단위로 바뀝니다. 오프닝과 아티스트 토크 일정은
+        인스타그램에서 가장 먼저 안내드립니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── space ───────────────────────── -->
+<section class="sect" id="space">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Space</p>
+    <h2 class="sect-title reveal">공간</h2>
+
+    <!-- ✏️ 사진 교체: 각 .frame 안에 <img src="..." alt="..."> 를 넣으세요 -->
+    <div class="grid reveal">
+      <figure class="grid-item">
+        <div class="frame frame--wide"></div>
+        <figcaption>1층 전시실</figcaption>
+      </figure>
+      <figure class="grid-item">
+        <div class="frame"></div>
+        <figcaption>계단</figcaption>
+      </figure>
+      <figure class="grid-item">
+        <div class="frame"></div>
+        <figcaption>2층 창가</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── visit ───────────────────────── -->
+<section class="sect sect--tint" id="visit">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Visit</p>
+    <h2 class="sect-title reveal">방문</h2>
+
+    <!-- ✏️ 주소 · 시간 · 오시는 길 -->
+    <dl class="info reveal">
+      <div>
+        <dt>주소</dt>
+        <dd>
+          서울 ○○구 ○○로 00, 1층<br>
+          <a class="link" href="https://map.naver.com/" target="_blank" rel="noopener">네이버 지도에서 보기 ↗</a>
+        </dd>
+      </div>
+      <div>
+        <dt>관람 시간</dt>
+        <dd>
+          화 — 일 · 12:00 — 19:00<br>
+          <span class="muted">월요일 휴관 · 입장 마감 18:30</span>
+        </dd>
+      </div>
+      <div>
+        <dt>관람료</dt>
+        <dd>무료<br><span class="muted">단체 관람은 사전 문의</span></dd>
+      </div>
+      <div>
+        <dt>문의</dt>
+        <dd>
+          <a class="link" href="mailto:hello@example.com">hello@example.com</a><br>
+          <a class="link" href="https://instagram.com/cyan.gallery.house" target="_blank" rel="noopener">@cyan.gallery.house ↗</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ───────────────────────── links ───────────────────────── -->
+<section class="sect" id="links">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Links</p>
+    <h2 class="sect-title reveal">바로가기</h2>
+
+    <!-- ✏️ 링크트리에 있던 항목을 여기에 그대로 옮기세요 -->
+    <ul class="linklist reveal">
+      <li><a href="#" target="_blank" rel="noopener"><span>관람 예약</span><em>Reservation</em></a></li>
+      <li><a href="https://instagram.com/cyan.gallery.house" target="_blank" rel="noopener"><span>인스타그램</span><em>Instagram</em></a></li>
+      <li><a href="#" target="_blank" rel="noopener"><span>전시 아카이브</span><em>Archive</em></a></li>
+      <li><a href="#" target="_blank" rel="noopener"><span>대관 문의</span><em>Rental</em></a></li>
+      <li><a href="#" target="_blank" rel="noopener"><span>오시는 길</span><em>Map</em></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── footer ───────────────────────── -->
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <span class="foot-mark" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <g stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M28 92 L100 30 L172 92"/><path d="M44 92 V170 H156 V92"/>
+          <path d="M72 170 V132 a28 28 0 0 1 56 0 V170"/>
+        </g>
+      </svg>
+    </span>
+    <p class="foot-name">CYAN gallery house</p>
+    <p class="foot-copy">© <span id="year">2026</span> CYAN. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
