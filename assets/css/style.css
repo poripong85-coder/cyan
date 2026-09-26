@@ -1,5 +1,5 @@
 /* ============================================================
-   CYAN — gallery house
+   CYAN — craft · stay · gallery
    ------------------------------------------------------------
    색을 바꾸고 싶으면 :root 의 토큰만 수정하면 전체에 반영됩니다.
    ============================================================ */
@@ -265,23 +265,10 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
   transition:background .3s var(--ease), color .3s var(--ease);
 }
 .btn:hover{ background:var(--accent); border-color:var(--accent); }
+.btn--sm{ min-height:38px; padding:0 18px; font-size:12.5px; }
+.btn.is-disabled{ background:transparent; color:var(--ink-faint); border-color:var(--rule); cursor:default; }
 .btn--ghost{ background:transparent; color:var(--ink); border-color:var(--rule); }
 .btn--ghost:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
-
-.showlist{ margin-top:clamp(56px,7vw,88px); border-top:1px solid var(--rule); }
-.showlist li{
-  display:grid;
-  grid-template-columns:130px minmax(0,1fr) 180px 64px;
-  gap:16px; align-items:baseline;
-  padding:22px 4px; border-bottom:1px solid var(--rule-soft);
-}
-.showlist-date{ font-family:var(--serif); font-size:15px; letter-spacing:.12em; color:var(--ink-soft); }
-.showlist-title{ font-size:16.5px; letter-spacing:-.015em; }
-.showlist-artist{ font-size:14px; color:var(--ink-soft); }
-.showlist-state{
-  justify-self:end; font-size:11px; letter-spacing:.14em; color:var(--ink-faint);
-  border:1px solid var(--rule); padding:3px 9px; line-height:1.5;
-}
 
 /* ── about ────────────────────────────────────────────────── */
 
@@ -297,60 +284,148 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
 }
 .about-body p:not(.lead){ color:#3B3D40; font-size:15.5px; line-height:1.95; }
 
-/* ── space grid ───────────────────────────────────────────── */
+/* ── section head ─────────────────────────────────────────── */
 
-.grid{
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(16px,2.6vw,32px);
+.sect-eyebrow b{ font-weight:500; margin-right:.6em; }
+.sect-head{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(20px,4vw,64px); align-items:end;
+  margin-bottom:clamp(38px,5vw,64px);
 }
-.grid-item:first-child{ grid-column:1 / -1; }
-.grid-item figcaption{
-  margin-top:12px; font-size:12.5px; letter-spacing:.1em; color:var(--ink-faint);
-}
+.sect-head .sect-title{ margin-bottom:0; }
+.sect-desc{ color:#3B3D40; font-size:15px; line-height:1.9; max-width:46ch; }
 
-/* ── visit ────────────────────────────────────────────────── */
+/* ── brand pillars ────────────────────────────────────────── */
 
-.info{
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:0 clamp(28px,5vw,72px);
+.pillars{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:clamp(56px,7vw,96px);
   border-top:1px solid var(--rule);
 }
-.info > div{
-  display:grid; grid-template-columns:96px minmax(0,1fr); gap:16px;
-  padding:26px 0; border-bottom:1px solid var(--rule-soft);
+.pillars li + li{ border-left:1px solid var(--rule-soft); }
+.pillars a{
+  display:flex; flex-direction:column; gap:10px; height:100%;
+  padding:clamp(24px,3vw,36px) clamp(18px,2.4vw,30px) clamp(28px,3vw,40px);
+  transition:background .35s var(--ease);
 }
-.info dt{
-  font-size:12px; letter-spacing:.16em; color:var(--ink-faint); padding-top:4px;
+.pillars a:hover{ background:rgba(255,255,255,.55); }
+.pillars em{
+  font-family:var(--serif); font-style:normal; font-size:12px;
+  letter-spacing:.24em; text-transform:uppercase; color:var(--accent);
 }
-.info dd{ font-size:15.5px; line-height:1.85; }
-.muted{ color:var(--ink-soft); font-size:13.5px; }
+.pillars strong{ font-weight:400; font-size:clamp(20px,2.2vw,24px); letter-spacing:-.02em; }
+.pillars span{ color:var(--ink-soft); font-size:14.5px; line-height:1.8; }
+.pillars i{
+  margin-top:auto; padding-top:14px; font-style:normal;
+  font-size:12.5px; letter-spacing:.08em;
+}
+.pillars i::after{ content:" →"; transition:margin .3s var(--ease); }
+.pillars a:hover i{ color:var(--accent); }
+.pillars a:hover i::after{ margin-left:4px; }
+
+/* ── craft: products ──────────────────────────────────────── */
+
+.filter{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:clamp(24px,3vw,36px); }
+.filter-btn{
+  font:inherit; font-size:13px; letter-spacing:.04em; color:var(--ink-soft);
+  background:none; border:1px solid var(--rule); padding:7px 16px; cursor:pointer;
+  transition:all .25s var(--ease);
+}
+.filter-btn:hover{ color:var(--ink); border-color:var(--ink); }
+.filter-btn.is-on{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+
+.products{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(28px,3.6vw,48px) clamp(16px,2.6vw,32px);
+}
+.product{ display:flex; flex-direction:column; }
+.product[hidden]{ display:none; }
+.product-body{ padding-top:16px; flex:1; }
+.product-cat{ font-size:11.5px; letter-spacing:.16em; color:var(--accent); }
+.product-name{ margin-top:4px; font-size:17px; font-weight:400; letter-spacing:-.02em; }
+.product-note{ margin-top:4px; font-size:13.5px; color:var(--ink-soft); }
+.product-price{ margin-top:10px; font-family:var(--serif); font-size:18px; letter-spacing:.04em; }
+.product .btn{ margin-top:16px; align-self:flex-start; }
+.product.is-soldout .frame{ opacity:.55; }
+.product.is-soldout .product-price{ color:var(--ink-faint); text-decoration:line-through; }
+
+.notes{
+  margin-top:clamp(48px,6vw,72px); padding-top:22px; border-top:1px solid var(--rule-soft);
+  display:grid; gap:6px;
+}
+.notes li{ font-size:13.5px; color:var(--ink-soft); padding-left:14px; position:relative; }
+.notes li::before{ content:"·"; position:absolute; left:0; color:var(--accent); }
+
+/* ── stay: rooms + booking ────────────────────────────────── */
+
+.rooms{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(20px,3vw,40px); }
+.room{ background:var(--paper); }
+.room .frame{ border:0; }
+.room-body{ padding:clamp(20px,2.6vw,30px); }
+.room-name{ font-size:clamp(20px,2.2vw,24px); font-weight:400; letter-spacing:-.02em; }
+.room-name em{
+  font-family:var(--serif); font-style:normal; font-size:13px;
+  letter-spacing:.14em; color:var(--ink-faint); margin-left:8px;
+}
+.room-text{ margin-top:8px; color:#3B3D40; font-size:14.5px; }
+.room-spec{ display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+.room-spec li{ font-size:12px; letter-spacing:.04em; color:var(--ink-soft); border:1px solid var(--rule); padding:2px 10px; }
+.room-price{ margin-top:18px; font-size:13.5px; color:var(--ink-soft); }
+.room-price b{ font-family:var(--serif); font-weight:500; font-size:21px; color:var(--ink); letter-spacing:.03em; margin-right:4px; }
+
+.booking, .inquiry{
+  margin-top:clamp(32px,4vw,48px);
+  background:var(--paper); border:1px solid var(--rule-soft);
+  padding:clamp(22px,3.4vw,44px);
+}
+.booking-title{ font-size:19px; font-weight:400; letter-spacing:-.02em; margin-bottom:22px; }
+.booking-fields{ display:grid; grid-template-columns:1.2fr 1fr 1fr .7fr; gap:14px; }
+
+.field{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+.field > span{ font-size:12px; letter-spacing:.1em; color:var(--ink-soft); }
+.field input, .field select, .field textarea{
+  font:inherit; font-size:15px; color:var(--ink);
+  width:100%; min-height:46px; padding:10px 12px;
+  background:#fff; border:1px solid var(--rule); border-radius:0;
+  transition:border-color .2s;
+}
+.field textarea{ resize:vertical; line-height:1.7; }
+.field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--accent); }
+.field .is-invalid, .field input.is-invalid, .field select.is-invalid, .field textarea.is-invalid{ border-color:#B4533B; }
+
+.booking-foot{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  margin-top:24px; padding-top:20px; border-top:1px solid var(--rule-soft);
+}
+.booking-sum{ font-size:14.5px; color:var(--ink-soft); }
+.booking-sum b{ font-family:var(--serif); font-weight:500; font-size:22px; color:var(--ink); margin-left:6px; }
+.booking-note{ margin-top:16px; font-size:12.5px; color:var(--ink-faint); line-height:1.8; }
+.booking .btn, .inquiry .btn{ cursor:pointer; font-family:inherit; }
+
+/* ── gallery: partners + inquiry ──────────────────────────── */
+
+.show-visual .frame{ max-width:none; }
+.partners{
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:clamp(48px,6vw,80px); border-top:1px solid var(--rule);
+}
+.partners li{ padding:22px 18px 24px 0; display:flex; flex-direction:column; gap:4px; }
+.partners li + li{ padding-left:18px; border-left:1px solid var(--rule-soft); }
+.partners em{ font-family:var(--serif); font-style:normal; font-size:12px; letter-spacing:.2em; color:var(--accent); }
+.partners strong{ font-weight:400; font-size:17px; letter-spacing:-.02em; }
+.partners span{ font-size:13.5px; color:var(--ink-soft); }
+
+.inquiry-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 16px; }
+.field--full{ grid-column:1 / -1; }
+.check{ display:flex; gap:10px; align-items:flex-start; margin-top:18px; font-size:13px; color:var(--ink-soft); cursor:pointer; }
+.check input{ margin-top:5px; accent-color:var(--accent); width:16px; height:16px; flex:none; }
+.check.is-invalid span{ color:#B4533B; }
+.form-msg{ font-size:14px; color:var(--ink-soft); }
+.form-msg.is-ok{ color:var(--accent); }
+.form-msg.is-err{ color:#B4533B; }
 
 .link{ border-bottom:1px solid var(--rule); transition:border-color .25s, color .25s; }
 .link:hover{ color:var(--accent); border-bottom-color:var(--accent); }
-
-/* ── links ────────────────────────────────────────────────── */
-
-.linklist{ border-top:1px solid var(--rule); }
-.linklist li{ border-bottom:1px solid var(--rule-soft); }
-.linklist a{
-  display:flex; align-items:baseline; gap:18px;
-  padding:26px 4px;
-  transition:padding-left .4s var(--ease), color .3s var(--ease);
-  position:relative;
-}
-.linklist a::after{
-  content:"↗"; margin-left:auto;
-  font-size:14px; color:var(--ink-faint);
-  transition:transform .35s var(--ease), color .3s var(--ease);
-}
-.linklist a span{ font-size:clamp(18px,2.4vw,24px); font-weight:300; letter-spacing:-.025em; }
-.linklist a em{
-  font-family:var(--serif); font-style:normal;
-  font-size:12px; letter-spacing:.22em; color:var(--ink-faint); text-transform:uppercase;
-}
-.linklist a:hover{ padding-left:16px; color:var(--accent); }
-.linklist a:hover::after{ transform:translate(4px,-4px); color:var(--accent); }
-.linklist a:hover em{ color:var(--accent); }
 
 /* ── footer ───────────────────────────────────────────────── */
 
@@ -364,6 +439,10 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
 .foot-name{
   font-family:var(--serif); font-size:15px; letter-spacing:.3em; padding-left:.3em;
 }
+.foot-info{
+  margin-top:18px; font-style:normal; font-size:13px; line-height:1.9; color:var(--ink-soft);
+}
+.foot-info span{ font-size:11.5px; color:var(--ink-faint); }
 .foot-copy{ margin-top:12px; font-size:12px; letter-spacing:.06em; color:var(--ink-faint); }
 
 /* ── reveal ───────────────────────────────────────────────── */
@@ -380,25 +459,22 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
   .head-nav{ display:none; }
   .head-toggle{ display:flex; }
   .show{ grid-template-columns:1fr; gap:32px; }
-  .show-visual{ max-width:440px; }
   .about{ grid-template-columns:1fr; }
-  .info{ grid-template-columns:1fr; }
+  .sect-head{ grid-template-columns:1fr; align-items:start; }
+  .products{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .booking-fields{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .partners{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .partners li:nth-child(3){ padding-left:0; border-left:0; }
+  .partners li:nth-child(n+3){ border-top:1px solid var(--rule-soft); }
 }
 
 @media (max-width:620px){
   body{ font-size:15px; }
-  .grid{ grid-template-columns:1fr; }
-  .grid-item:first-child{ grid-column:auto; }
-  .showlist li{
-    grid-template-columns:1fr auto; gap:4px 12px; padding:20px 2px;
-  }
-  .showlist-date{ order:1; font-size:13px; }
-  .showlist-state{ order:2; }
-  .showlist-title{ order:3; grid-column:1 / -1; }
-  .showlist-artist{ order:4; grid-column:1 / -1; }
-  .info > div{ grid-template-columns:1fr; gap:6px; }
-  .info dt{ padding-top:0; }
-  .linklist a{ padding:22px 2px; gap:12px; flex-wrap:wrap; }
+  .pillars{ grid-template-columns:1fr; }
+  .pillars li + li{ border-left:0; border-top:1px solid var(--rule-soft); }
+  .rooms{ grid-template-columns:1fr; }
+  .inquiry-grid{ grid-template-columns:1fr; }
+  .booking-foot .btn{ width:100%; }
 }
 
 /* ── reduced motion ───────────────────────────────────────── */
