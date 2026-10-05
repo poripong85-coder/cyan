@@ -79,8 +79,7 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
 }
 
 .head-logo{ display:flex; align-items:center; gap:10px; }
-.head-mark{ width:20px; color:var(--ink); opacity:.9; }
-.head-mark svg{ width:100%; height:auto; display:block; }
+.head-mark{ width:46px; height:auto; display:block; }
 .head-word{
   font-family:var(--serif); font-size:19px; font-weight:400;
   letter-spacing:.34em; padding-left:.34em;
@@ -150,28 +149,10 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
 .hero-in{ position:relative; }
 
 .hero-mark{
-  width:clamp(168px, 27vw, 268px);
+  display:block; width:clamp(260px, 44vw, 500px); height:auto;
   margin:0 auto clamp(30px,4vw,46px);
-  color:var(--ink);
+  animation:rise 1.2s var(--ease) .1s both;
 }
-.hero-mark svg{ width:100%; height:auto; display:block; overflow:visible; }
-
-.hero-mark .draw path{
-  stroke-dasharray:1; stroke-dashoffset:1;
-  animation:draw 1.5s var(--ease) forwards;
-}
-.hero-mark .draw path:nth-child(1){ animation-delay:.15s; }
-.hero-mark .draw path:nth-child(2){ animation-delay:.35s; }
-.hero-mark .draw path:nth-child(3){ animation-delay:.6s; }
-.hero-mark .draw path:nth-child(4){ animation-delay:.05s; }
-.hero-mark .glow{
-  opacity:0; transform-origin:100px 68px;
-  animation:pop 1s var(--ease) 1.25s forwards;
-  color:var(--accent); fill:var(--accent);
-}
-
-@keyframes draw{ to{ stroke-dashoffset:0; } }
-@keyframes pop{ from{ opacity:0; transform:scale(.4);} to{ opacity:1; transform:scale(1);} }
 
 .hero-word{ display:block; }
 .hero-word-main{
@@ -434,8 +415,7 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
   border-top:1px solid var(--rule-soft);
   text-align:center;
 }
-.foot-mark{ display:block; width:26px; margin:0 auto 18px; color:var(--ink-faint); }
-.foot-mark svg{ width:100%; height:auto; display:block; }
+.foot-mark{ display:block; width:64px; height:auto; margin:0 auto 18px; opacity:.55; }
 .foot-name{
   font-family:var(--serif); font-size:15px; letter-spacing:.3em; padding-left:.3em;
 }
@@ -486,6 +466,4 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
     transition-duration:.001ms !important;
   }
   .reveal{ opacity:1; transform:none; }
-  .hero-mark .draw path{ stroke-dashoffset:0; }
-  .hero-mark .glow{ opacity:1; }
 }
