@@ -151,7 +151,7 @@
         bkSum.textContent = '예약 링크가 아직 연결되지 않았어요. 곧 열릴 예정입니다.';
         return;
       }
-      window.open(url, '_blank', 'noopener');
+      window.open(url, '_blank', 'noopener') || (location.href = url);
     });
 
     update();

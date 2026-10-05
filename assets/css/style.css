@@ -427,11 +427,11 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
 
 /* ── reveal ───────────────────────────────────────────────── */
 
-.reveal{
+.js .reveal{
   opacity:0; transform:translateY(20px);
   transition:opacity .9s var(--ease), transform .9s var(--ease);
 }
-.reveal.is-in{ opacity:1; transform:none; }
+.js .reveal.is-in{ opacity:1; transform:none; }
 
 /* ── responsive ───────────────────────────────────────────── */
 
@@ -465,5 +465,5 @@ ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
     animation-duration:.001ms !important; animation-delay:0ms !important;
     transition-duration:.001ms !important;
   }
-  .reveal{ opacity:1; transform:none; }
+  .js .reveal{ opacity:1; transform:none; }
 }
