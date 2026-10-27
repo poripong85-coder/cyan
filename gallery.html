@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시안 갤러리 — CYAN</title>
+<meta name="description" content="시안 갤러리의 지금 전시와 지난 전시 아카이브.">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="시안 갤러리 — CYAN">
+<meta property="og:description" content="시안 갤러리의 지금 전시와 지난 전시 아카이브.">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page">
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<!-- ───────────────────────── header ───────────────────────── -->
+<header class="site-head" id="siteHead">
+  <div class="wrap head-in">
+    <a class="head-logo" href="index.html" aria-label="CYAN 홈">
+      <span class="head-mark" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none">
+          <g stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 92 L100 30 L172 92"/><path d="M44 92 V170 H156 V92"/>
+            <path d="M72 170 V132 a28 28 0 0 1 56 0 V170"/>
+          </g>
+        </svg>
+      </span>
+      <span class="head-word">CYAN</span>
+    </a>
+
+    <nav class="head-nav" aria-label="주요 메뉴">
+      <a href="about.html">브랜드</a>
+      <a href="stay.html">북스테이</a>
+      <a href="workshop.html">공방</a>
+      <a href="gallery.html" aria-current="page">갤러리</a>
+      <a href="shop.html">숍</a>
+    </nav>
+
+    <div class="head-side">
+      <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span class="head-cart-n" data-cart-count hidden>0</span>
+      </a>
+      <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
+  <a href="about.html"><em>01</em> 브랜드</a>
+  <a href="stay.html"><em>02</em> 시안북스테이</a>
+  <a href="workshop.html"><em>03</em> 시안 공방</a>
+  <a href="gallery.html"><em>04</em> 시안 갤러리</a>
+  <a href="shop.html"><em>05</em> 시안 숍</a>
+</nav>
+
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="sect-eyebrow">Gallery</p>
+    <h1 class="page-title">시안 갤러리</h1>
+    <!-- ✏️ 갤러리 한 줄 소개 -->
+    <p class="page-lead">한 번에 한 사람의 작업을 걸고, 오래 봅니다. 화 — 일 12:00 — 19:00 · 관람 무료</p>
+  </div>
+</header>
+
+<!-- 전시 목록은 모두 data.js → exhibitions 에서 자동으로 만들어집니다 -->
+<section class="sect sect--flush" id="now">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Now Showing</p>
+    <h2 class="sect-title reveal">지금 전시</h2>
+    <div id="galNow"></div>
+  </div>
+</section>
+
+<section class="sect" id="next" hidden>
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Upcoming</p>
+    <h2 class="sect-title reveal">예정 전시</h2>
+    <ul class="showlist reveal" id="galNext"></ul>
+  </div>
+</section>
+
+<section class="sect sect--tint" id="archive">
+  <div class="wrap">
+    <p class="sect-eyebrow reveal">Archive</p>
+    <h2 class="sect-title reveal">지난 전시</h2>
+    <div class="tabs reveal" id="galYears" role="tablist" aria-label="연도"></div>
+    <ul class="archive" id="galArchive"></ul>
+  </div>
+</section>
+
+</main>
+
+<dialog class="modal" id="galModal" aria-labelledby="galModalTitle">
+  <div class="modal-in">
+    <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
+    <div class="modal-body" id="galModalBody"></div>
+  </div>
+</dialog>
+
+<!-- ───────────────────────── footer ───────────────────────── -->
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <a class="foot-mark" href="index.html" aria-label="CYAN 홈">
+      <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M28 92 L100 30 L172 92"/><path d="M44 92 V170 H156 V92"/>
+          <path d="M72 170 V132 a28 28 0 0 1 56 0 V170"/>
+        </g>
+      </svg>
+    </a>
+    <p class="foot-name">CYAN</p>
+    <nav class="foot-nav" aria-label="하단 메뉴">
+      <a href="about.html">브랜드</a>
+      <a href="stay.html">북스테이</a>
+      <a href="workshop.html">공방</a>
+      <a href="gallery.html">갤러리</a>
+      <a href="shop.html">숍</a>
+    </nav>
+    <p class="foot-info">
+      <span data-site="address">서울 ○○구 ○○로 00</span>
+      <a data-site="email" href="mailto:hello@example.com">hello@example.com</a>
+      <a data-site="instagram" href="https://instagram.com/cyan.gallery.house" target="_blank" rel="noopener">@cyan.gallery.house ↗</a>
+    </p>
+    <p class="foot-copy">© <span id="year">2026</span> CYAN. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/gallery.js" defer></script>
+</body>
+</html>
