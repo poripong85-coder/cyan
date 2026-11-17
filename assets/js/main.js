@@ -235,7 +235,12 @@
   document.querySelectorAll('[data-site]').forEach(function (el) {
     var key = el.getAttribute('data-site');
     var v = site[key];
-    if (!v) return;
+    if (!v) {
+      /* 비워둔 항목(예: 전화)은 그 줄을 숨김 */
+      var row = el.closest('[data-optional]');
+      if (row) row.hidden = true;
+      return;
+    }
     if (key === 'email') { el.textContent = v; el.href = 'mailto:' + v; }
     else if (key === 'phone') { el.textContent = v; el.href = 'tel:' + v.replace(/[^0-9+]/g, ''); }
     else if (key === 'instagram') { el.textContent = '@' + v + ' ↗'; el.href = 'https://instagram.com/' + v; }

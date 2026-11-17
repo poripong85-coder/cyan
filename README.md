@@ -1,6 +1,6 @@
-# CYAN — bookstay · workshop · gallery · shop
+# CYAN — 예술적으로 쉬다.
 
-시안 홈페이지. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다 (GitHub Pages에 그대로 올라갑니다).
+시안 홈페이지. 브로슈어의 손그림(로고, 크레용 그림, 건물 스케치, 약도)을 그대로 살린 디자인입니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다 (GitHub Pages에 그대로 올라갑니다).
 
 ```
 index.html       홈 — 네 공간 소개 · 지금 전시 · 새 시리즈 · 방문 안내
@@ -14,6 +14,7 @@ assets/js/data.js       ✏️ 객실·클래스·전시·시리즈·제품 내�
 assets/js/main.js       공통 (헤더, 모바일 메뉴, 장바구니 저장, 신청서 보내기)
 assets/js/home.js / stay.js / workshop.js / gallery.js / shop.js   페이지별 동작
 assets/css/style.css    디자인
+assets/img/draw/        손그림 (아래 참고)
 ```
 
 ## 미리보기
@@ -62,16 +63,31 @@ python3 -m http.server 8000
 
 장바구니는 방문자의 브라우저에 저장됩니다(다른 기기와 공유되지 않음).
 
+## 손그림 파일 (`assets/img/draw/`)
+
+| 파일 | 쓰는 곳 |
+| --- | --- |
+| `hero.webp` | 첫 화면 크레용 그림 — 말풍선 위에 글자가 얹힙니다 |
+| `logo-cyan.png` | CYAN 손글씨 로고 (CSS에서 색을 입혀 씀) |
+| `gallery.png`, `house.png` | 브로슈어 건물 스케치 |
+| `map.png`, `patch.png` | 손그림 약도, 초록 풀밭 |
+| `kid-1.png`, `kid-2.png`, `bear.png`, `red-house.png` | 크레용 그림에서 오려낸 캐릭터 |
+| `*.svg` | 꽃·새싹·화살표·동그라미 등 장식 낙서 |
+
+원본 그림을 더 큰 해상도로 바꾸고 싶으면 같은 이름으로 덮어쓰면 됩니다.
+첫 화면 그림을 바꾸면 말풍선 글자 위치는 `style.css`의 `.hero-say--big`, `.hero-say--small` 의 `left/top/width/height`(그림 기준 %)로 맞춥니다.
+
 ## 색 바꾸기
 
 `assets/css/style.css` 맨 위 `:root`의 값만 고치면 전체에 반영됩니다.
 
 | 토큰 | 기본값 | 쓰임 |
 | --- | --- | --- |
-| `--paper` | `#F7F5F1` | 바탕 (따뜻한 화이트) |
-| `--paper-tint` | `#EFECE5` | 한 톤 낮은 섹션 바탕 |
-| `--ink` | `#16181A` | 본문 |
-| `--accent` | `#1E858D` | 포인트 컬러 (cyan) |
+| `--paper` | `#FFFDF6` | 종이 바탕 |
+| `--blue` | `#1E4394` | 시안 파랑 (로고, 버튼, 푸터) |
+| `--sky` | `#8AB6DE` | 하늘색 (약도, 북스테이) |
+| `--green` | `#98CE8C` | 크레용 풀밭 (첫 화면, 갤러리) |
+| `--cream`, `--pink`, `--yellow` | | 섹션 · 강조 |
 
 ## 배포 — GitHub Pages
 
@@ -81,5 +97,5 @@ Settings → Pages → Source를 `Deploy from a branch`, 브랜치를 `main` / `
 
 ## 참고
 
-- 글꼴은 Google Fonts(Cormorant Garamond, Noto Sans KR)를 불러옵니다.
+- 글꼴은 Google Fonts의 손글씨체 Gaegu(제목)와 Gowun Dodum(본문)을 불러옵니다.
 - 별도 빌드·의존성 없음. 모바일 대응, 키보드 접근성, `prefers-reduced-motion` 반영.
