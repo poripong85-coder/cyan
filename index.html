@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="home">
@@ -41,7 +41,7 @@
 
     <div class="head-side">
       <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <img src="assets/img/draw/bag.svg" alt="">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         <span class="head-cart-n" data-cart-count hidden>0</span>
       </a>
       <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
@@ -58,17 +58,12 @@
   <a href="workshop.html"><em>03</em> 시안 공방</a>
   <a href="gallery.html"><em>04</em> 시안 갤러리</a>
   <a href="shop.html"><em>05</em> 시안 숍</a>
-  <img class="mobile-nav-art" src="assets/img/draw/flower-color.svg" alt="">
 </nav>
 
 <main id="main">
 
 <!-- ───────────────────────── hero : 크레용 그림 + 말풍선 ───────────────────────── -->
 <section class="hero" id="top">
-  <img class="hero-doodle hero-doodle--1" src="assets/img/draw/flower-white.svg" alt="">
-  <img class="hero-doodle hero-doodle--2" src="assets/img/draw/sparkle.svg" alt="">
-  <img class="hero-doodle hero-doodle--3" src="assets/img/draw/flower-color.svg" alt="">
-  <img class="hero-doodle hero-doodle--4" src="assets/img/draw/sprout.svg" alt="">
 
   <!-- ✏️ 그림 교체: assets/img/draw/hero.webp -->
   <div class="hero-art">
@@ -85,7 +80,7 @@
 
   <a class="hero-cue" href="#come">
     <span>시안으로 오세요</span>
-    <img src="assets/img/draw/arrow.svg" alt="">
+    <i aria-hidden="true">↓</i>
   </a>
 </section>
 
@@ -98,7 +93,6 @@
     <ul class="tiles">
       <li class="tile tile--sky reveal">
         <a href="stay.html">
-          <img class="tile-art" src="assets/img/draw/red-house.png" alt="">
           <p class="tile-no">House · Bookstay</p>
           <h3 class="tile-title">시안북스테이</h3>
           <p class="tile-text">붉은 벽돌 뾰족집에서 하룻밤. 산으로 둘러싸인 마당.</p>
@@ -107,7 +101,6 @@
       </li>
       <li class="tile tile--cream reveal">
         <a href="workshop.html">
-          <img class="tile-art" src="assets/img/draw/pot.svg" alt="">
           <p class="tile-no">Workshop</p>
           <h3 class="tile-title">시안 공방</h3>
           <p class="tile-text">도자기, 그림, 소잉. 손으로 만드는 체험 클래스.</p>
@@ -116,7 +109,6 @@
       </li>
       <li class="tile tile--green reveal">
         <a href="gallery.html">
-          <img class="tile-art" src="assets/img/draw/frame.svg" alt="">
           <p class="tile-no">Gallery</p>
           <h3 class="tile-title">시안 갤러리</h3>
           <p class="tile-text">전시, 공연, 아트살롱. 벽돌 아치와 달 조명 아래.</p>
@@ -125,7 +117,6 @@
       </li>
       <li class="tile tile--pink reveal">
         <a href="shop.html">
-          <img class="tile-art" src="assets/img/draw/bag.svg" alt="">
           <p class="tile-no">Shop</p>
           <h3 class="tile-title">시안 숍</h3>
           <p class="tile-text">소창, 생활 도자기, 소잉. 시리즈로 만드는 물건.</p>
@@ -172,7 +163,6 @@
     <h2 class="sect-title reveal">새 시리즈</h2>
     <div id="homeShop"></div>
   </div>
-  <img class="sect-sticker sect-sticker--bear" src="assets/img/draw/bear.png" alt="">
 </section>
 
 <!-- ───────────────────────── 오시는 길 (하늘) ───────────────────────── -->
@@ -240,8 +230,6 @@
         <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
       </p>
     </div>
-    <img class="foot-flower foot-flower--1" src="assets/img/draw/flower-white.svg" alt="">
-    <img class="foot-flower foot-flower--2" src="assets/img/draw/flower-white.svg" alt="">
     <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
   </div>
 </footer>

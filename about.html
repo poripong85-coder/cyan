@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="page">
@@ -41,7 +41,7 @@
 
     <div class="head-side">
       <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <img src="assets/img/draw/bag.svg" alt="">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         <span class="head-cart-n" data-cart-count hidden>0</span>
       </a>
       <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
@@ -58,7 +58,6 @@
   <a href="workshop.html"><em>03</em> 시안 공방</a>
   <a href="gallery.html"><em>04</em> 시안 갤러리</a>
   <a href="shop.html"><em>05</em> 시안 숍</a>
-  <img class="mobile-nav-art" src="assets/img/draw/flower-color.svg" alt="">
 </nav>
 
 <main id="main">
@@ -69,11 +68,11 @@
       <p class="sect-eyebrow">Brand</p>
       <h1 class="page-title">예술적으로 쉬다.</h1>
       <!-- ✏️ 브랜드 한 줄 -->
-      <p class="page-lead bubble">시안 CYAN은 파랑이자 초안을 의미합니다.<br>시작, 초심의 의미와 호두마을의 초록 숲과 대비되는 바다의 느낌을 담았습니다.</p>
+      <p class="page-lead">시안 CYAN은 파랑이자 초안을 의미합니다.<br>시작, 초심의 의미와 호두마을의 초록 숲과 대비되는 바다의 느낌을 담았습니다.</p>
     </div>
-    <div class="page-head-art page-head-art--kids">
-      <img src="assets/img/draw/kid-1.png" alt="">
-      <img src="assets/img/draw/kid-2.png" alt="">
+    <div class="page-head-art page-head-art--duo">
+      <img class="art art--gallery" src="assets/img/draw/gallery.png" alt="갤러리 건물 그림">
+      <img class="art art--house" src="assets/img/draw/house.png" alt="벽돌집 그림">
     </div>
   </div>
 </header>
@@ -112,25 +111,21 @@
     <!-- ✏️ 하는 일 -->
     <ul class="doings">
       <li class="reveal">
-        <img src="assets/img/draw/frame.svg" alt="">
         <h3>공간</h3>
         <p>전시, 공연, 스튜디오, 아트살롱, 게스트하우스</p>
         <a class="link" href="gallery.html">전시 보기</a> <a class="link" href="stay.html">북스테이</a>
       </li>
       <li class="reveal">
-        <img src="assets/img/draw/heart.svg" alt="">
         <h3>이벤트</h3>
         <p>워크샵, 스몰웨딩, 파티 등 각종 이벤트와 수다모임</p>
         <a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">문의하기</a>
       </li>
       <li class="reveal">
-        <img src="assets/img/draw/pot.svg" alt="">
         <h3>프로그램</h3>
         <p>체험(도자기, 그림, 소잉 등), 탐방(광덕사, 휴양림) 등</p>
         <a class="link" href="workshop.html">클래스 예약</a>
       </li>
       <li class="reveal">
-        <img src="assets/img/draw/bag.svg" alt="">
         <h3>제품 판매</h3>
         <p>소창, 생활 도자기, 소잉 등</p>
         <a class="link" href="shop.html">숍 가기</a>
@@ -217,8 +212,6 @@
         <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
       </p>
     </div>
-    <img class="foot-flower foot-flower--1" src="assets/img/draw/flower-white.svg" alt="">
-    <img class="foot-flower foot-flower--2" src="assets/img/draw/flower-white.svg" alt="">
     <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
   </div>
 </footer>

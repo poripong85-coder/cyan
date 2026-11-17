@@ -1,6 +1,6 @@
 # CYAN — 예술적으로 쉬다.
 
-시안 홈페이지. 브로슈어의 손그림(로고, 크레용 그림, 건물 스케치, 약도)을 그대로 살린 디자인입니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다 (GitHub Pages에 그대로 올라갑니다).
+시안 홈페이지. 심플하고 말랑한 디자인(둥근 면, 부드러운 색) 위에 브로슈어의 손그림(로고, 크레용 그림, 건물 스케치, 약도)을 포인트로 얹었습니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다 (GitHub Pages에 그대로 올라갑니다).
 
 ```
 index.html       홈 — 네 공간 소개 · 지금 전시 · 새 시리즈 · 방문 안내
@@ -71,8 +71,8 @@ python3 -m http.server 8000
 | `logo-cyan.png` | CYAN 손글씨 로고 (CSS에서 색을 입혀 씀) |
 | `gallery.png`, `house.png` | 브로슈어 건물 스케치 |
 | `map.png`, `patch.png` | 손그림 약도, 초록 풀밭 |
-| `kid-1.png`, `kid-2.png`, `bear.png`, `red-house.png` | 크레용 그림에서 오려낸 캐릭터 |
-| `*.svg` | 꽃·새싹·화살표·동그라미 등 장식 낙서 |
+| `kid-1.png`, `bear.png` | 크레용 그림에서 오려낸 캐릭터 (공방 · 숍 머리) |
+| `photo.svg` | 사진이 없을 때 빈 액자에 보이는 표시 |
 
 원본 그림을 더 큰 해상도로 바꾸고 싶으면 같은 이름으로 덮어쓰면 됩니다.
 첫 화면 그림을 바꾸면 말풍선 글자 위치는 `style.css`의 `.hero-say--big`, `.hero-say--small` 의 `left/top/width/height`(그림 기준 %)로 맞춥니다.
@@ -83,11 +83,12 @@ python3 -m http.server 8000
 
 | 토큰 | 기본값 | 쓰임 |
 | --- | --- | --- |
-| `--paper` | `#FFFDF6` | 종이 바탕 |
-| `--blue` | `#1E4394` | 시안 파랑 (로고, 버튼, 푸터) |
-| `--sky` | `#8AB6DE` | 하늘색 (약도, 북스테이) |
-| `--green` | `#98CE8C` | 크레용 풀밭 (첫 화면, 갤러리) |
-| `--cream`, `--pink`, `--yellow` | | 섹션 · 강조 |
+| `--paper` | `#FBFAF6` | 바탕 |
+| `--blue` | `#24489A` | 시안 파랑 (로고, 버튼, 푸터) |
+| `--sky` | `#CFE0F2` | 하늘색 면 (약도, 북스테이) |
+| `--green` | `#98CE8C` | 첫 화면 풀밭 (그림과 같은 색이라 바꾸지 않는 것을 권장) |
+| `--cream`, `--pink`, `--green-lt` | | 섹션 · 카드 바탕 |
+| `--r-lg`, `--r-md` | | 둥근 정도 |
 
 ## 배포 — GitHub Pages
 
@@ -97,5 +98,5 @@ Settings → Pages → Source를 `Deploy from a branch`, 브랜치를 `main` / `
 
 ## 참고
 
-- 글꼴은 Google Fonts의 손글씨체 Gaegu(제목)와 Gowun Dodum(본문)을 불러옵니다.
+- 글꼴은 Google Fonts의 Gowun Dodum(본문·제목)과, 작은 영문 표시에만 손글씨체 Gaegu를 씁니다.
 - 별도 빌드·의존성 없음. 모바일 대응, 키보드 접근성, `prefers-reduced-motion` 반영.
