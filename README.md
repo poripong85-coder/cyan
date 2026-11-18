@@ -89,7 +89,8 @@ python3 -m http.server 8000
 | `--blue` | `#2B4D8F` | 시안 파랑 — 링크에만 조금 |
 | `--sheet`, `--measure` | `860px`, `34em` | 종이 폭, 한 줄 길이 |
 
-글꼴은 Google Fonts의 고운바탕(본문)과 Cormorant Garamond(숫자 · 영문)를 씁니다.
+글꼴은 Google Fonts의 손글씨체를 씁니다: 본문은 Gaegu(개구), 제목 · 숫자는 나눔손글씨 펜(Nanum Pen Script).
+그림 크기는 `.cover-art`, `.opener-art`, `.plate img`의 `width`로 조절합니다.
 
 ## 배포 — GitHub Pages
 
