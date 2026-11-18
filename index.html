@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="home">
@@ -41,6 +41,7 @@
     <p class="toc-label">차례</p>
     <ol class="toc">
       <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
+      <li><a href="index.html#press"><span class="toc-no"></span><span class="toc-name">소개된 곳</span><span class="toc-page">7</span></a></li>
       <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여</span><span class="toc-page">9</span></a></li>
       <li><a href="stay.html"><span class="toc-no">2</span><span class="toc-name">시안북스테이</span><span class="toc-page">21</span></a></li>
       <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방</span><span class="toc-page">37</span></a></li>
@@ -58,11 +59,30 @@
 
 <!-- ───────────────────────── 표지 ───────────────────────── -->
 <section class="cover" id="top">
-  <p class="cover-top">광덕산 호두마을의 두 채의 집 이야기</p>
+  <!-- ✏️ 표지 윗줄 -->
+  <p class="cover-top">EBS 〈건축탐구 집〉에 소개된 광덕산 호두마을의 두 채의 집</p>
   <div class="cover-mid">
-    <img class="cover-art" src="assets/img/book/drawing.png" alt="왼쪽에 뾰족 지붕의 HOUSE, 오른쪽에 네모난 GALLERY 건물이 그려진 펜 드로잉" width="1034" height="565">
     <h1 class="cover-title">CYAN</h1>
     <p class="cover-sub">예술적으로 쉬다.</p>
+
+    <!-- 그림을 누르면 그 장으로 바로 펼쳐집니다 -->
+    <nav class="doors" aria-label="바로 펼치기">
+      <a class="door" href="stay.html">
+        <img src="assets/img/book/icon-house.png" alt="" width="289" height="331">
+        <span class="door-name">시안북스테이</span>
+        <span class="door-ch">2장</span>
+      </a>
+      <a class="door" href="workshop.html">
+        <img src="assets/img/book/icon-workshop.svg" alt="" width="196" height="158">
+        <span class="door-name">시안 공방</span>
+        <span class="door-ch">3장</span>
+      </a>
+      <a class="door door--wide" href="gallery.html">
+        <img src="assets/img/book/icon-gallery.png" alt="" width="676" height="351">
+        <span class="door-name">시안 갤러리</span>
+        <span class="door-ch">4장</span>
+      </a>
+    </nav>
   </div>
   <p class="cover-foot">펴낸곳 시안 · 충남 천안</p>
   <a class="cover-cue" href="#preface">책장을 넘기세요 <span aria-hidden="true">↓</span></a>
@@ -81,12 +101,35 @@
   </div>
 </section>
 
+<!-- ───────────────────────── 소개된 곳 ───────────────────────── -->
+<section class="page" id="press">
+  <p class="part-label">소개된 곳</p>
+  <!-- ✏️ 방송 · 책 · 기사 (항목을 더 붙여도 됩니다) -->
+  <ul class="press">
+      <li class="press-item">
+        <p class="press-kind">방송</p>
+        <h3 class="press-title">EBS 〈건축탐구 집〉</h3>
+        <p class="press-sub">「예순 넘어, 아내를 위한 집을 짓다」</p>
+        <p class="press-text">예순이 넘어 아내를 위해 지은 집, 시안의 두 채의 집이 지어진 이야기가 방송에 소개되었습니다.</p>
+        <a class="xref" href="https://www.youtube.com/results?search_query=%EA%B1%B4%EC%B6%95%ED%83%90%EA%B5%AC+%EC%A7%91+%EC%98%88%EC%88%9C+%EB%84%98%EC%96%B4+%EC%95%84%EB%82%B4%EB%A5%BC+%EC%9C%84%ED%95%9C+%EC%A7%91%EC%9D%84+%EC%A7%93%EB%8B%A4" target="_blank" rel="noopener">방송 찾아보기 ↗</a>
+      </li>
+      <li class="press-item">
+        <p class="press-kind">책</p>
+        <h3 class="press-title">『엄마의 집짓기』</h3>
+        <p class="press-sub">시안을 지은 이야기</p>
+        <p class="press-text">두 채의 집을 짓기까지의 이야기를 한 권에 담아 펴냈습니다.</p>
+        <a class="xref" href="https://search.kyobobook.co.kr/search?keyword=%EC%97%84%EB%A7%88%EC%9D%98+%EC%A7%91%EC%A7%93%EA%B8%B0" target="_blank" rel="noopener">책 찾아보기 ↗</a>
+      </li>
+  </ul>
+</section>
+
 <!-- ───────────────────────── 차례 ───────────────────────── -->
 <section class="page" id="contents">
   <p class="part-label">차례</p>
   <ol class="toc toc--page">
     <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
-    <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여<small>이름 · 두 채의 집 · 시안에서 하는 일</small></span><span class="toc-page">9</span></a></li>
+    <li><a href="#press"><span class="toc-no"></span><span class="toc-name">소개된 곳<small>EBS 〈건축탐구 집〉 · 『엄마의 집짓기』</small></span><span class="toc-page">7</span></a></li>
+    <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여<small>이름 · 두 채의 집 · 하는 일 · 이 집이 실린 곳</small></span><span class="toc-page">9</span></a></li>
     <li><a href="stay.html"><span class="toc-no">2</span><span class="toc-name">시안북스테이<small>방 · 머무는 법 · 예약 신청</small></span><span class="toc-page">21</span></a></li>
     <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방<small>도자기 · 그림 · 소잉</small></span><span class="toc-page">37</span></a></li>
     <li><a href="gallery.html"><span class="toc-no">4</span><span class="toc-name">시안 갤러리<small id="tocGallery">지금 걸린 전시 · 지난 전시</small></span><span class="toc-page">49</span></a></li>

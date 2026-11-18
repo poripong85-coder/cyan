@@ -5,8 +5,8 @@
 그림은 HOUSE · GALLERY 펜 드로잉 한 장만 씁니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다.
 
 ```
-index.html       표지 · 서문 · 차례 · 판권(연락처)
-about.html       1장 시안에 대하여 — 이름 · 두 채의 집 · 하는 일 · 부록 오시는 길
+index.html       표지(그림 아이콘으로 2·3·4장 바로 가기) · 서문 · 소개된 곳 · 차례 · 판권(연락처)
+about.html       1장 시안에 대하여 — 이름 · 두 채의 집 · 하는 일 · 이 집이 실린 곳 · 부록 오시는 길
 stay.html        2장 시안북스테이 — 방 · 머무는 법 · 예약 신청(달력, 요금 계산)
 workshop.html    3장 시안 공방 — 수업 · 수업 신청(회차, 인원)
 gallery.html     4장 시안 갤러리 — 지금 걸린 전시 · 다음 전시 · 지난 전시(연도별)
@@ -46,7 +46,7 @@ python3 -m http.server 8000
 
 ### 2. HTML의 `✏️` 주석 — 소개 문장
 
-서문, 각 장의 첫 문장, 1장 본문, 부록(오시는 길), 판권은 HTML에서 `✏️` 표시를 찾아 고칩니다.
+서문, 소개된 곳(방송 · 책), 각 장의 첫 문장, 1장 본문, 부록(오시는 길), 판권은 HTML에서 `✏️` 표시를 찾아 고칩니다.
 머리말과 차례는 모든 페이지에 똑같이 들어 있으니 차례를 바꿀 땐 여섯 파일을 함께 고쳐주세요.
 
 ## 예약 · 주문은 어떻게 받나요?
@@ -72,6 +72,8 @@ python3 -m http.server 8000
 | `drawing.png` | 표지 — HOUSE와 GALLERY가 함께 있는 원본 그림 |
 | `house.png` | 2장 첫 페이지, 1장 그림 2 |
 | `gallery.png` | 4장 첫 페이지, 1장 그림 1 |
+| `icon-house.png`, `icon-gallery.png` | 표지의 바로 가기 아이콘 (원본 그림에서 글씨 없이 오린 것) |
+| `icon-workshop.svg` | 표지 · 3장의 공방 아이콘 (같은 펜 느낌으로 새로 그린 항아리와 그릇) |
 | `favicon.png` | 브라우저 탭 아이콘 |
 
 원본을 더 선명한 파일로 바꾸고 싶으면 같은 이름의 투명 배경 PNG로 덮어쓰면 됩니다.
@@ -89,7 +91,8 @@ python3 -m http.server 8000
 | `--blue` | `#2B4D8F` | 시안 파랑 — 링크에만 조금 |
 | `--sheet`, `--measure` | `860px`, `34em` | 종이 폭, 한 줄 길이 |
 
-글꼴은 Google Fonts의 손글씨체를 씁니다: 본문은 Gaegu(개구), 제목 · 숫자는 나눔손글씨 펜(Nanum Pen Script).
+글꼴은 Google Fonts의 나눔손글씨 펜(Nanum Pen Script) 하나로 통일했습니다.
+손글씨가 작게 그려지는 만큼 `--adjust`(font-size-adjust) 값으로 전체를 키웁니다. 글씨가 작거나 크면 이 값만 조절하세요.
 그림 크기는 `.cover-art`, `.opener-art`, `.plate img`의 `width`로 조절합니다.
 
 ## 배포 — GitHub Pages
