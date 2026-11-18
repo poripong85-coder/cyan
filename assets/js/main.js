@@ -1,4 +1,4 @@
-/* CYAN — 공통 스크립트 (헤더 · 메뉴 · 등장 효과 · 공용 도구) */
+/* CYAN — 공통 스크립트 (머리말 · 차례 · 등장 효과 · 공용 도구) */
 (function () {
   'use strict';
 
@@ -64,10 +64,11 @@
     return 'now';
   };
 
-  /* 사진 자리 (이미지가 없으면 빈 액자) */
+  /* 사진 (data.js 에 사진 경로가 있을 때만 보여줌) */
   util.frame = function (src, alt, mod) {
+    if (!src) return '';
     return '<div class="frame' + (mod ? ' frame--' + mod : '') + '">' +
-      (src ? '<img src="' + util.esc(src) + '" alt="' + util.esc(alt || '') + '" loading="lazy">' : '') +
+      '<img src="' + util.esc(src) + '" alt="' + util.esc(alt || '') + '" loading="lazy">' +
       '</div>';
   };
 
@@ -177,13 +178,13 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* 모바일 메뉴 --------------------------------------------------- */
+  /* 차례 펼치기 --------------------------------------------------- */
   var toggle = document.getElementById('navToggle');
   var nav = document.getElementById('mobileNav');
 
   var setNav = function (open) {
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    toggle.textContent = open ? '닫기' : '차례';
     document.body.style.overflow = open ? 'hidden' : '';
     if (open) {
       nav.hidden = false;
@@ -208,9 +209,6 @@
     if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setNav(false);
   });
 
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 900 && toggle.getAttribute('aria-expanded') === 'true') setNav(false);
-  });
 
   /* 스크롤 등장 --------------------------------------------------- */
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {

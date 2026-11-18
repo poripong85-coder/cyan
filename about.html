@@ -3,218 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>브랜드 — CYAN</title>
-<meta name="description" content="CYAN은 머물고, 만들고, 오래 보는 일을 한 지붕 아래 모은 작은 집입니다.">
-<meta name="theme-color" content="#FFFDF6">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<title>1장 시안에 대하여 — CYAN</title>
+<meta name="description" content="시안 CYAN은 파랑이자 초안을 의미합니다. 두 채의 집과 오시는 길.">
+<meta name="theme-color" content="#ECE8DF">
+<link rel="icon" href="assets/img/book/favicon.png" type="image/png">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="브랜드 — CYAN">
-<meta property="og:description" content="CYAN은 머물고, 만들고, 오래 보는 일을 한 지붕 아래 모은 작은 집입니다.">
-<meta property="og:image" content="assets/img/draw/hero.webp">
+<meta property="og:type" content="book">
+<meta property="og:title" content="1장 시안에 대하여 — CYAN">
+<meta property="og:description" content="시안 CYAN은 파랑이자 초안을 의미합니다. 두 채의 집과 오시는 길.">
+<meta property="og:image" content="assets/img/book/drawing.png">
 <meta property="og:locale" content="ko_KR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page">
+<body class="chapter">
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
-<!-- ───────────────────────── header ───────────────────────── -->
+<!-- ───────────────────────── 머리말 (책의 running head) ───────────────────────── -->
 <header class="site-head" id="siteHead">
-  <div class="wrap head-in">
-    <a class="head-logo" href="index.html">
-      <span class="logo" aria-hidden="true"></span>
-      <span class="sr">CYAN 홈</span>
-    </a>
-
-    <nav class="head-nav" aria-label="주요 메뉴">
-      <a href="about.html" aria-current="page">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-
+  <div class="head-in">
+    <a class="head-title" href="index.html">CYAN</a>
+    <span class="head-chapter">1 · 시안에 대하여</span>
     <div class="head-side">
-      <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span class="head-cart-n" data-cart-count hidden>0</span>
-      </a>
-      <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
-        <span></span><span></span>
-      </button>
+      <a class="head-cart" href="shop.html#cart">장바구니<span class="head-cart-n" data-cart-count hidden>0</span></a>
+      <button class="head-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav">차례</button>
     </div>
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
-  <a href="index.html"><em>00</em> 처음</a>
-  <a href="about.html"><em>01</em> 브랜드</a>
-  <a href="stay.html"><em>02</em> 시안북스테이</a>
-  <a href="workshop.html"><em>03</em> 시안 공방</a>
-  <a href="gallery.html"><em>04</em> 시안 갤러리</a>
-  <a href="shop.html"><em>05</em> 시안 숍</a>
+<!-- ───────────────────────── 차례 ───────────────────────── -->
+<nav class="toc-layer mobile-nav" id="mobileNav" aria-label="차례" hidden>
+  <div class="toc-layer-in">
+    <p class="toc-label">차례</p>
+    <ol class="toc">
+      <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
+      <li><a href="about.html" aria-current="page"><span class="toc-no">1</span><span class="toc-name">시안에 대하여</span><span class="toc-page">9</span></a></li>
+      <li><a href="stay.html"><span class="toc-no">2</span><span class="toc-name">시안북스테이</span><span class="toc-page">21</span></a></li>
+      <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방</span><span class="toc-page">37</span></a></li>
+      <li><a href="gallery.html"><span class="toc-no">4</span><span class="toc-name">시안 갤러리</span><span class="toc-page">49</span></a></li>
+      <li><a href="shop.html"><span class="toc-no">5</span><span class="toc-name">시안 숍</span><span class="toc-page">61</span></a></li>
+      <li><a href="about.html#visit"><span class="toc-no"></span><span class="toc-name">부록 · 오시는 길</span><span class="toc-page">75</span></a></li>
+      <li><a href="index.html#colophon"><span class="toc-no"></span><span class="toc-name">판권</span><span class="toc-page">79</span></a></li>
+    </ol>
+  </div>
 </nav>
+
+<div class="sheet">
 
 <main id="main">
 
-<header class="page-head page-head--blue">
-  <div class="wrap page-head-in">
-    <div class="page-head-text">
-      <p class="sect-eyebrow">Brand</p>
-      <h1 class="page-title">예술적으로 쉬다.</h1>
-      <!-- ✏️ 브랜드 한 줄 -->
-      <p class="page-lead">시안 CYAN은 파랑이자 초안을 의미합니다.<br>시작, 초심의 의미와 호두마을의 초록 숲과 대비되는 바다의 느낌을 담았습니다.</p>
-    </div>
-    <div class="page-head-art page-head-art--duo">
-      <img class="art art--gallery" src="assets/img/draw/gallery.png" alt="갤러리 건물 그림">
-      <img class="art art--house" src="assets/img/draw/house.png" alt="벽돌집 그림">
-    </div>
-  </div>
+<header class="opener">
+  <p class="opener-no">제1장</p>
+  <h1 class="opener-title">시안에 대하여</h1>
+  <p class="opener-epigraph">예술적으로 쉬다.</p>
 </header>
 
-<!-- ───────────────────────── 두 채의 집 ───────────────────────── -->
-<section class="sect" id="buildings">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Gallery &amp; House</p>
-    <h2 class="sect-title reveal">두 채의 집</h2>
-
-    <!-- ✏️ 건물 소개 -->
-    <div class="duo">
-      <article class="duo-item reveal">
-        <img class="art art--gallery" src="assets/img/draw/gallery.png" alt="갤러리 건물 그림">
-        <div class="bubble bubble--tail-up">
-          <h3>GALLERY</h3>
-          <p>일층과 이층이 30도의 각도를 이루며 마당을 안아줍니다. 갤러리 안의 벽돌 아치와 달 조명이 고급스럽습니다. 이층 테라스에서 산으로 둘러싼 그림 같은 풍경을 만끽하세요.</p>
-        </div>
-      </article>
-      <article class="duo-item reveal">
-        <img class="art art--house" src="assets/img/draw/house.png" alt="벽돌집 그림">
-        <div class="bubble bubble--tail-up">
-          <h3>HOUSE</h3>
-          <p>붉은 고벽돌로 지어진 작지만 높은 뾰족집. 라푼젤이 사는 성 같기도, 헨젤과 그레텔이 발견한 과자집 같기도 합니다. 문을 열면, 온통 노랑으로 가득한 내부가 따뜻하고 산뜻합니다.</p>
-        </div>
-      </article>
-    </div>
+<!-- ✏️ 1장 본문 -->
+<section class="page" id="name">
+  <h2 class="sect-title"><span class="sect-no">1.1</span>이름</h2>
+  <div class="prose">
+    <p class="lead">시안 CYAN은 파랑이자 초안(草案)을 의미합니다.</p>
+    <p>인쇄의 첫 번째 색인 파랑, 그리고 무언가를 처음 그려보는 초안. 시작과 초심의 뜻을 담았습니다. 호두마을의 초록 숲 한가운데에서, 그 초록과 대비되는 바다의 느낌을 떠올리며 지은 이름입니다.</p>
   </div>
 </section>
 
-<!-- ───────────────────────── 시안에서 하는 일 ───────────────────────── -->
-<section class="sect sect--cream" id="what">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">What we do</p>
-    <h2 class="sect-title reveal">시안에서는요</h2>
-    <!-- ✏️ 하는 일 -->
-    <ul class="doings">
-      <li class="reveal">
-        <h3>공간</h3>
-        <p>전시, 공연, 스튜디오, 아트살롱, 게스트하우스</p>
-        <a class="link" href="gallery.html">전시 보기</a> <a class="link" href="stay.html">북스테이</a>
-      </li>
-      <li class="reveal">
-        <h3>이벤트</h3>
-        <p>워크샵, 스몰웨딩, 파티 등 각종 이벤트와 수다모임</p>
-        <a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">문의하기</a>
-      </li>
-      <li class="reveal">
-        <h3>프로그램</h3>
-        <p>체험(도자기, 그림, 소잉 등), 탐방(광덕사, 휴양림) 등</p>
-        <a class="link" href="workshop.html">클래스 예약</a>
-      </li>
-      <li class="reveal">
-        <h3>제품 판매</h3>
-        <p>소창, 생활 도자기, 소잉 등</p>
-        <a class="link" href="shop.html">숍 가기</a>
-      </li>
-    </ul>
+<section class="page" id="buildings">
+  <h2 class="sect-title"><span class="sect-no">1.2</span>두 채의 집</h2>
+  <div class="prose">
+    <p>시안에는 두 채의 집이 있습니다. 서로 다른 시간에, 서로 다른 모양으로 지었지만 한 마당을 함께 씁니다.</p>
+  </div>
+
+  <figure class="plate">
+    <img src="assets/img/book/gallery.png" alt="네모난 2층 건물과 테라스 난간이 그려진 GALLERY 펜 드로잉" width="676" height="476" loading="lazy">
+    <figcaption><span>그림 1</span> 갤러리</figcaption>
+  </figure>
+  <div class="prose">
+    <p>일층과 이층이 30도의 각도를 이루며 마당을 안아줍니다. 갤러리 안의 벽돌 아치와 달 조명이 고급스럽습니다. 이층 테라스에서 산으로 둘러싼 그림 같은 풍경을 만끽하세요.</p>
+  </div>
+
+  <figure class="plate plate--small">
+    <img src="assets/img/book/house.png" alt="뾰족 지붕에 아치 창이 있는 HOUSE 펜 드로잉" width="371" height="421" loading="lazy">
+    <figcaption><span>그림 2</span> 하우스</figcaption>
+  </figure>
+  <div class="prose">
+    <p>붉은 고벽돌로 지어진 작지만 높은 뾰족집. 라푼젤이 사는 성 같기도 하고, 헨젤과 그레텔이 발견한 과자집 같기도 합니다. 문을 열면, 온통 노랑으로 가득한 내부가 따뜻하고 산뜻합니다.</p>
   </div>
 </section>
 
-<!-- ───────────────────────── 사진 ───────────────────────── -->
-<section class="sect" id="photos">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Photos</p>
-    <h2 class="sect-title reveal">시안의 풍경</h2>
-    <!-- ✏️ 사진 교체: 각 .frame 안에 <img src="assets/img/..." alt="..."> 를 넣으세요 -->
-    <div class="polaroids reveal">
-      <figure><div class="frame"></div><figcaption>벽돌집과 갤러리</figcaption></figure>
-      <figure><div class="frame"></div><figcaption>갤러리 안 벽돌 아치</figcaption></figure>
-      <figure><div class="frame"></div><figcaption>노랑으로 가득한 방</figcaption></figure>
-      <figure><div class="frame"></div><figcaption>이층 테라스</figcaption></figure>
-      <figure><div class="frame"></div><figcaption>뾰족 지붕 아치 창</figcaption></figure>
-      <figure><div class="frame"></div><figcaption>호두마을 노을</figcaption></figure>
-    </div>
-    <p class="note reveal">tips! EBS 〈건축탐구 집 — 예순 넘어, 아내를 위한 집을 짓다〉 출연 · 『엄마의 집짓기』 출판</p>
-  </div>
+<section class="page" id="what">
+  <h2 class="sect-title"><span class="sect-no">1.3</span>시안에서 하는 일</h2>
+  <dl class="glossary">
+    <div><dt>공간</dt><dd>전시, 공연, 스튜디오, 아트살롱, 게스트하우스 <a class="xref" href="stay.html">→ 2장</a> <a class="xref" href="gallery.html">→ 4장</a></dd></div>
+    <div><dt>이벤트</dt><dd>워크숍, 스몰웨딩, 파티 등 각종 이벤트와 수다모임 <a class="xref" data-site="email" href="mailto:cyan.gallery.house@gmail.com">문의</a></dd></div>
+    <div><dt>프로그램</dt><dd>체험(도자기, 그림, 소잉 등), 탐방(광덕사, 휴양림 등) <a class="xref" href="workshop.html">→ 3장</a></dd></div>
+    <div><dt>제품</dt><dd>소창, 생활 도자기, 소잉 <a class="xref" href="shop.html">→ 5장</a></dd></div>
+  </dl>
+  <p class="footnote">* EBS 〈건축탐구 집 — 예순 넘어, 아내를 위한 집을 짓다〉에 소개되었고, 집을 지은 이야기는 『엄마의 집짓기』로 펴냈습니다.</p>
 </section>
 
-<!-- ───────────────────────── 오시는 길 ───────────────────────── -->
-<section class="sect sect--sky" id="visit">
-  <div class="wrap visit">
-    <div class="visit-map reveal">
-      <img src="assets/img/draw/map.png" alt="시안 가는 길 손그림 지도: 광덕사 방향 큰길에서 보산원초교, 한가롬 찻집, 광덕4리 마을회관, 영희네를 지나 개울 건너 위빠사나 명상센터 옆" width="455" height="450">
-    </div>
-    <div class="visit-body">
-      <p class="sect-eyebrow reveal">Contact</p>
-      <h2 class="sect-title reveal">여기로 연락주세요!</h2>
-      <dl class="info reveal">
-        <div>
-          <dt>주소</dt>
-          <dd>
-            <span data-site="postcode">31220</span>, <span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span><br>
-            <a class="link" data-site="mapUrl" href="https://map.naver.com/" target="_blank" rel="noopener">네이버 지도에서 보기 ↗</a>
-          </dd>
-        </div>
-        <div>
-          <dt>운영 시간</dt>
-          <dd>화 — 일 · 12:00 — 19:00<br><span class="muted">월요일 휴관 · 북스테이는 매일</span></dd>
-        </div>
-        <div data-optional>
-          <dt>전화</dt>
-          <dd><a class="link" data-site="phone" href="tel:">전화번호</a></dd>
-        </div>
-        <div>
-          <dt>메일 · SNS</dt>
-          <dd>
-            <a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br>
-            <a class="link" data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
-          </dd>
-        </div>
-      </dl>
-    </div>
+<!-- ───────────────────────── 부록 ───────────────────────── -->
+<section class="page page--appendix" id="visit">
+  <p class="part-label">부록</p>
+  <h2 class="sect-title">오시는 길</h2>
+  <div class="prose">
+    <p class="lead">광덕산 호두마을에 있어요.</p>
+    <p><span data-site="postcode">31220</span>, <span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span></p>
   </div>
+  <!-- ✏️ 길 안내 -->
+  <ol class="route">
+    <li>광덕사 쪽 큰길에서 보산원초교를 지나 마을 길로 들어섭니다.</li>
+    <li>한가롬 찻집과 광덕4리 마을회관을 지나 계속 올라갑니다.</li>
+    <li>영희네를 지나 개울을 건너면, 위빠사나 명상센터 옆에 시안이 있습니다.</li>
+  </ol>
+  <dl class="glossary">
+    <div><dt>여는 시간</dt><dd>갤러리 · 숍 화 — 일 12:00 — 19:00, 월요일 쉼<br>북스테이 체크인 15:00 · 체크아웃 11:00</dd></div>
+    <div data-optional><dt>전화</dt><dd><a class="link" data-site="phone" href="tel:">전화번호</a></dd></div>
+    <div><dt>연락</dt><dd><a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br><a class="link" data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a></dd></div>
+    <div><dt>지도</dt><dd><a class="link" data-site="mapUrl" href="https://map.naver.com/" target="_blank" rel="noopener">네이버 지도에서 보기 ↗</a></dd></div>
+  </dl>
 </section>
 
 </main>
 
-<!-- ───────────────────────── footer ───────────────────────── -->
+<!-- ───────────────────────── 장의 끝 · 다음 장 ───────────────────────── -->
 <footer class="site-foot">
-  <div class="wrap foot-in">
-    <div class="foot-brand">
-      <a href="index.html" class="foot-logo"><span class="logo" aria-hidden="true"></span><span class="sr">CYAN 홈</span></a>
-      <p class="foot-slogan">예술적으로 쉬다.</p>
-    </div>
-    <nav class="foot-nav" aria-label="하단 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-    <div class="foot-info">
-      <p>광덕산 호두마을에 있어요.<br><span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span></p>
-      <p>여기로 연락주세요!<br>
-        <a data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br>
-        <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
-      </p>
-    </div>
-    <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
-  </div>
+  <nav class="turn" aria-label="앞뒤 장">
+    <a class="turn-prev" href="index.html"><small>앞 장</small>처음</a>
+    <a class="turn-next" href="stay.html"><small>다음 장</small>2장 시안북스테이</a>
+  </nav>
+  <p class="folio">— 9 —</p>
+  <p class="foot-copy">CYAN · 예술적으로 쉬다. · © <span id="year">2026</span></p>
 </footer>
+
+</div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
 <script src="assets/js/main.js" defer></script>

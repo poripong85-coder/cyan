@@ -3,90 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>시안 숍 — CYAN</title>
-<meta name="description" content="전시와 공방에서 출발한 시안의 제작 시리즈.">
-<meta name="theme-color" content="#FFFDF6">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<title>5장 시안 숍 — CYAN</title>
+<meta name="description" content="소창, 생활 도자기, 소잉. 시안의 제작 시리즈 목록.">
+<meta name="theme-color" content="#ECE8DF">
+<link rel="icon" href="assets/img/book/favicon.png" type="image/png">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="시안 숍 — CYAN">
-<meta property="og:description" content="전시와 공방에서 출발한 시안의 제작 시리즈.">
-<meta property="og:image" content="assets/img/draw/hero.webp">
+<meta property="og:type" content="book">
+<meta property="og:title" content="5장 시안 숍 — CYAN">
+<meta property="og:description" content="소창, 생활 도자기, 소잉. 시안의 제작 시리즈 목록.">
+<meta property="og:image" content="assets/img/book/drawing.png">
 <meta property="og:locale" content="ko_KR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page">
+<body class="chapter">
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
-<!-- ───────────────────────── header ───────────────────────── -->
+<!-- ───────────────────────── 머리말 (책의 running head) ───────────────────────── -->
 <header class="site-head" id="siteHead">
-  <div class="wrap head-in">
-    <a class="head-logo" href="index.html">
-      <span class="logo" aria-hidden="true"></span>
-      <span class="sr">CYAN 홈</span>
-    </a>
-
-    <nav class="head-nav" aria-label="주요 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html" aria-current="page">숍</a>
-    </nav>
-
+  <div class="head-in">
+    <a class="head-title" href="index.html">CYAN</a>
+    <span class="head-chapter">5 · 시안 숍</span>
     <div class="head-side">
-      <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span class="head-cart-n" data-cart-count hidden>0</span>
-      </a>
-      <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
-        <span></span><span></span>
-      </button>
+      <a class="head-cart" href="shop.html#cart">장바구니<span class="head-cart-n" data-cart-count hidden>0</span></a>
+      <button class="head-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav">차례</button>
     </div>
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
-  <a href="index.html"><em>00</em> 처음</a>
-  <a href="about.html"><em>01</em> 브랜드</a>
-  <a href="stay.html"><em>02</em> 시안북스테이</a>
-  <a href="workshop.html"><em>03</em> 시안 공방</a>
-  <a href="gallery.html"><em>04</em> 시안 갤러리</a>
-  <a href="shop.html"><em>05</em> 시안 숍</a>
+<!-- ───────────────────────── 차례 ───────────────────────── -->
+<nav class="toc-layer mobile-nav" id="mobileNav" aria-label="차례" hidden>
+  <div class="toc-layer-in">
+    <p class="toc-label">차례</p>
+    <ol class="toc">
+      <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
+      <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여</span><span class="toc-page">9</span></a></li>
+      <li><a href="stay.html"><span class="toc-no">2</span><span class="toc-name">시안북스테이</span><span class="toc-page">21</span></a></li>
+      <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방</span><span class="toc-page">37</span></a></li>
+      <li><a href="gallery.html"><span class="toc-no">4</span><span class="toc-name">시안 갤러리</span><span class="toc-page">49</span></a></li>
+      <li><a href="shop.html" aria-current="page"><span class="toc-no">5</span><span class="toc-name">시안 숍</span><span class="toc-page">61</span></a></li>
+      <li><a href="about.html#visit"><span class="toc-no"></span><span class="toc-name">부록 · 오시는 길</span><span class="toc-page">75</span></a></li>
+      <li><a href="index.html#colophon"><span class="toc-no"></span><span class="toc-name">판권</span><span class="toc-page">79</span></a></li>
+    </ol>
+  </div>
 </nav>
+
+<div class="sheet">
 
 <main id="main">
 
-<header class="page-head page-head--pink">
-  <div class="wrap page-head-in">
-    <div class="page-head-text">
-      <p class="sect-eyebrow">Shop</p>
-      <h1 class="page-title">시안 숍</h1>
-      <!-- ✏️ 숍 한 줄 소개 -->
-      <p class="page-lead">소창, 생활 도자기, 소잉.<br>시리즈마다 한 번씩, 적은 수량으로 만들어요.</p>
-    </div>
-    <div class="page-head-art">
-      <img src="assets/img/draw/bear.png" alt="" class="page-head-bear">
-    </div>
-  </div>
+<header class="opener">
+  <p class="opener-no">제5장</p>
+  <h1 class="opener-title">시안 숍</h1>
+  <!-- ✏️ 5장 첫 문장 -->
+  <p class="opener-epigraph">소창, 생활 도자기, 소잉.<br>시리즈마다 한 번씩, 적은 수량으로 만듭니다.</p>
 </header>
 
-<!-- 시리즈 · 제품은 모두 data.js → series / products 에서 자동으로 만들어집니다 -->
-<section class="sect sect--flush" id="series">
-  <div class="wrap">
-    <div class="tabs reveal" id="shopTabs" role="tablist" aria-label="시리즈"></div>
-    <div id="shopList"></div>
-  </div>
+<!-- 시리즈 · 제품은 data.js → series / products 에서 자동으로 만들어집니다 -->
+<section class="page" id="series">
+  <h2 class="sect-title"><span class="sect-no">5.1</span>제작 시리즈 목록</h2>
+  <p class="prose-note">이름을 누르면 자세한 설명이 열립니다. 지난 시리즈는 기록으로 남겨 두었습니다.</p>
+  <div class="tabs" id="shopTabs" role="tablist" aria-label="시리즈"></div>
+  <div id="shopList"></div>
 </section>
 
 </main>
 
-<!-- 제품 상세 -->
+<!-- 제품 자세히 -->
 <dialog class="modal" id="prodModal" aria-labelledby="prodModalTitle">
   <div class="modal-in">
     <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
@@ -99,7 +86,7 @@
   <div class="modal-in">
     <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
     <div class="modal-body">
-      <p class="sect-eyebrow">Cart</p>
+      <p class="part-label">주문서</p>
       <h2 class="modal-title" id="cartTitle">장바구니</h2>
 
       <div id="cartView">
@@ -107,14 +94,14 @@
         <dl class="sum" id="cartSum"></dl>
 
         <form class="order" id="orderForm" novalidate>
-          <p class="book-sum-title">주문자 · 배송 정보</p>
+          <p class="book-sum-title">받으시는 분</p>
           <div class="fields">
             <div class="field"><label for="oName">이름</label><input id="oName" name="name" autocomplete="name" required></div>
             <div class="field"><label for="oPhone">연락처</label><input id="oPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required pattern="[0-9\-+ ]{9,}"></div>
             <div class="field field--full"><label for="oAddr">주소</label><input id="oAddr" name="address" autocomplete="street-address" required></div>
-            <div class="field field--full"><label for="oMemo">요청 사항 <small>선택</small></label><input id="oMemo" name="memo"></div>
+            <div class="field field--full"><label for="oMemo">남기실 말 <small>선택</small></label><input id="oMemo" name="memo"></div>
             <div class="field field--full field--check">
-              <label><input type="checkbox" id="oPickup" name="pickup"> 매장에서 직접 받을게요 (배송비 없음)</label>
+              <label><input type="checkbox" id="oPickup" name="pickup"> 시안에서 직접 받을게요 (배송비 없음)</label>
             </div>
           </div>
           <p class="muted" id="orderBank"></p>
@@ -126,36 +113,23 @@
       <div class="done" id="orderDone" hidden tabindex="-1">
         <h3 class="done-title">주문 신청이 접수되었습니다</h3>
         <p class="done-text" id="orderDoneText"></p>
-        <button class="btn btn--ghost" type="button" data-close>쇼핑 계속하기</button>
+        <button class="btn btn--ghost" type="button" data-close>목록으로 돌아가기</button>
       </div>
     </div>
   </div>
 </dialog>
 
-<!-- ───────────────────────── footer ───────────────────────── -->
+<!-- ───────────────────────── 장의 끝 · 다음 장 ───────────────────────── -->
 <footer class="site-foot">
-  <div class="wrap foot-in">
-    <div class="foot-brand">
-      <a href="index.html" class="foot-logo"><span class="logo" aria-hidden="true"></span><span class="sr">CYAN 홈</span></a>
-      <p class="foot-slogan">예술적으로 쉬다.</p>
-    </div>
-    <nav class="foot-nav" aria-label="하단 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-    <div class="foot-info">
-      <p>광덕산 호두마을에 있어요.<br><span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span></p>
-      <p>여기로 연락주세요!<br>
-        <a data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br>
-        <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
-      </p>
-    </div>
-    <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
-  </div>
+  <nav class="turn" aria-label="앞뒤 장">
+    <a class="turn-prev" href="gallery.html"><small>앞 장</small>4장 시안 갤러리</a>
+    <a class="turn-next" href="index.html#colophon"><small>마지막 장</small>판권</a>
+  </nav>
+  <p class="folio">— 61 —</p>
+  <p class="foot-copy">CYAN · 예술적으로 쉬다. · © <span id="year">2026</span></p>
 </footer>
+
+</div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
 <script src="assets/js/main.js" defer></script>

@@ -1,20 +1,22 @@
 # CYAN — 예술적으로 쉬다.
 
-시안 홈페이지. 심플하고 말랑한 디자인(둥근 면, 부드러운 색) 위에 브로슈어의 손그림(로고, 크레용 그림, 건물 스케치, 약도)을 포인트로 얹었습니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다 (GitHub Pages에 그대로 올라갑니다).
+시안 홈페이지. **한 권의 책처럼** 읽히도록 만들었습니다.
+표지 → 서문 → 차례 → 1–5장 → 부록 → 판권 순서이고, 각 장 끝의 "다음 장"으로 책장을 넘기듯 이어 읽습니다.
+그림은 HOUSE · GALLERY 펜 드로잉 한 장만 씁니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다.
 
 ```
-index.html       홈 — 네 공간 소개 · 지금 전시 · 새 시리즈 · 방문 안내
-about.html       브랜드 소개 — 이야기 · 가치 · 층별 구성 · 연혁 · 문의
-stay.html        시안북스테이 — 객실 소개 · 달력에서 날짜 선택 · 요금 계산 · 예약 신청
-workshop.html    시안 공방 — 클래스 소개 · 회차 선택 · 인원 · 예약 신청
-gallery.html     시안 갤러리 — 지금 전시 · 예정 전시 · 지난 전시 아카이브(연도별)
-shop.html        시안 숍 — 제작 시리즈별 아카이브 · 장바구니 · 주문 신청
+index.html       표지 · 서문 · 차례 · 판권(연락처)
+about.html       1장 시안에 대하여 — 이름 · 두 채의 집 · 하는 일 · 부록 오시는 길
+stay.html        2장 시안북스테이 — 방 · 머무는 법 · 예약 신청(달력, 요금 계산)
+workshop.html    3장 시안 공방 — 수업 · 수업 신청(회차, 인원)
+gallery.html     4장 시안 갤러리 — 지금 걸린 전시 · 다음 전시 · 지난 전시(연도별)
+shop.html        5장 시안 숍 — 제작 시리즈 목록 · 장바구니 · 주문 신청
 
-assets/js/data.js       ✏️ 객실·클래스·전시·시리즈·제품 내용 (대부분 여기만 고치면 됩니다)
-assets/js/main.js       공통 (헤더, 모바일 메뉴, 장바구니 저장, 신청서 보내기)
+assets/js/data.js       ✏️ 방·수업·전시·시리즈·제품 내용 (대부분 여기만 고치면 됩니다)
+assets/js/main.js       공통 (머리말, 차례 펼치기, 장바구니 저장, 신청서 보내기)
 assets/js/home.js / stay.js / workshop.js / gallery.js / shop.js   페이지별 동작
 assets/css/style.css    디자인
-assets/img/draw/        손그림 (아래 참고)
+assets/img/book/        펜 드로잉 (drawing 전체 · house · gallery · favicon)
 ```
 
 ## 미리보기
@@ -40,12 +42,12 @@ python3 -m http.server 8000
 | `products` | 시리즈별 제품. `soldOut: true`면 품절, `link`를 적으면 외부 스토어(스마트스토어 등)로 연결 |
 | `shipping` | 배송비, 무료 배송 기준 금액 |
 
-사진은 `assets/img/`에 넣고 `image: 'assets/img/room-01.jpg'`처럼 경로를 적으면 빈 액자 대신 보입니다.
+사진은 비워두면 아무것도 보이지 않고, `assets/img/`에 넣고 `image: 'assets/img/room-01.jpg'`처럼 경로를 적으면 그때만 나타납니다.
 
 ### 2. HTML의 `✏️` 주석 — 소개 문장
 
-각 페이지 맨 위 한 줄 소개, 브랜드 이야기·가치·연혁, 공간 사진 등은 HTML에서 `✏️` 표시를 찾아 고칩니다.
-헤더·푸터는 모든 페이지에 똑같이 들어 있으니 메뉴를 바꿀 땐 여섯 파일을 함께 고쳐주세요.
+서문, 각 장의 첫 문장, 1장 본문, 부록(오시는 길), 판권은 HTML에서 `✏️` 표시를 찾아 고칩니다.
+머리말과 차례는 모든 페이지에 똑같이 들어 있으니 차례를 바꿀 땐 여섯 파일을 함께 고쳐주세요.
 
 ## 예약 · 주문은 어떻게 받나요?
 
@@ -63,32 +65,31 @@ python3 -m http.server 8000
 
 장바구니는 방문자의 브라우저에 저장됩니다(다른 기기와 공유되지 않음).
 
-## 손그림 파일 (`assets/img/draw/`)
+## 그림 (`assets/img/book/`)
 
 | 파일 | 쓰는 곳 |
 | --- | --- |
-| `hero.webp` | 첫 화면 크레용 그림 — 말풍선 위에 글자가 얹힙니다 |
-| `logo-cyan.png` | CYAN 손글씨 로고 (CSS에서 색을 입혀 씀) |
-| `gallery.png`, `house.png` | 브로슈어 건물 스케치 |
-| `map.png`, `patch.png` | 손그림 약도, 초록 풀밭 |
-| `kid-1.png`, `bear.png` | 크레용 그림에서 오려낸 캐릭터 (공방 · 숍 머리) |
-| `photo.svg` | 사진이 없을 때 빈 액자에 보이는 표시 |
+| `drawing.png` | 표지 — HOUSE와 GALLERY가 함께 있는 원본 그림 |
+| `house.png` | 2장 첫 페이지, 1장 그림 2 |
+| `gallery.png` | 4장 첫 페이지, 1장 그림 1 |
+| `favicon.png` | 브라우저 탭 아이콘 |
 
-원본 그림을 더 큰 해상도로 바꾸고 싶으면 같은 이름으로 덮어쓰면 됩니다.
-첫 화면 그림을 바꾸면 말풍선 글자 위치는 `style.css`의 `.hero-say--big`, `.hero-say--small` 의 `left/top/width/height`(그림 기준 %)로 맞춥니다.
+원본을 더 선명한 파일로 바꾸고 싶으면 같은 이름의 투명 배경 PNG로 덮어쓰면 됩니다.
 
-## 색 바꾸기
+## 색과 글꼴
 
 `assets/css/style.css` 맨 위 `:root`의 값만 고치면 전체에 반영됩니다.
 
 | 토큰 | 기본값 | 쓰임 |
 | --- | --- | --- |
-| `--paper` | `#FBFAF6` | 바탕 |
-| `--blue` | `#24489A` | 시안 파랑 (로고, 버튼, 푸터) |
-| `--sky` | `#CFE0F2` | 하늘색 면 (약도, 북스테이) |
-| `--green` | `#98CE8C` | 첫 화면 풀밭 (그림과 같은 색이라 바꾸지 않는 것을 권장) |
-| `--cream`, `--pink`, `--green-lt` | | 섹션 · 카드 바탕 |
-| `--r-lg`, `--r-md` | | 둥근 정도 |
+| `--desk` | `#E9E5DC` | 책 바깥 (넓은 화면에서 종이 둘레) |
+| `--paper` | `#FBF9F4` | 종이 |
+| `--tint` | `#F2EEE5` | 부록 · 판권 페이지 |
+| `--ink` | `#1E1E1C` | 글자 |
+| `--blue` | `#2B4D8F` | 시안 파랑 — 링크에만 조금 |
+| `--sheet`, `--measure` | `860px`, `34em` | 종이 폭, 한 줄 길이 |
+
+글꼴은 Google Fonts의 고운바탕(본문)과 Cormorant Garamond(숫자 · 영문)를 씁니다.
 
 ## 배포 — GitHub Pages
 
@@ -98,5 +99,4 @@ Settings → Pages → Source를 `Deploy from a branch`, 브랜치를 `main` / `
 
 ## 참고
 
-- 글꼴은 Google Fonts의 Gowun Dodum(본문·제목)과, 작은 영문 표시에만 손글씨체 Gaegu를 씁니다.
-- 별도 빌드·의존성 없음. 모바일 대응, 키보드 접근성, `prefers-reduced-motion` 반영.
+- 별도 빌드 · 의존성 없음. 모바일 대응, 키보드 접근성, `prefers-reduced-motion` 반영.

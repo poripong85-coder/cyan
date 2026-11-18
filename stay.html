@@ -3,195 +3,158 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>시안북스테이 — CYAN</title>
-<meta name="description" content="책장 사이에서 하룻밤. 하루 두 팀만 머무는 시안북스테이 숙박 예약.">
-<meta name="theme-color" content="#FFFDF6">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<title>2장 시안북스테이 — CYAN</title>
+<meta name="description" content="붉은 고벽돌 뾰족집에서의 하룻밤. 시안북스테이 방 소개와 예약 신청.">
+<meta name="theme-color" content="#ECE8DF">
+<link rel="icon" href="assets/img/book/favicon.png" type="image/png">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="시안북스테이 — CYAN">
-<meta property="og:description" content="책장 사이에서 하룻밤. 하루 두 팀만 머무는 시안북스테이 숙박 예약.">
-<meta property="og:image" content="assets/img/draw/hero.webp">
+<meta property="og:type" content="book">
+<meta property="og:title" content="2장 시안북스테이 — CYAN">
+<meta property="og:description" content="붉은 고벽돌 뾰족집에서의 하룻밤. 시안북스테이 방 소개와 예약 신청.">
+<meta property="og:image" content="assets/img/book/drawing.png">
 <meta property="og:locale" content="ko_KR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page">
+<body class="chapter">
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
-<!-- ───────────────────────── header ───────────────────────── -->
+<!-- ───────────────────────── 머리말 (책의 running head) ───────────────────────── -->
 <header class="site-head" id="siteHead">
-  <div class="wrap head-in">
-    <a class="head-logo" href="index.html">
-      <span class="logo" aria-hidden="true"></span>
-      <span class="sr">CYAN 홈</span>
-    </a>
-
-    <nav class="head-nav" aria-label="주요 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html" aria-current="page">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-
+  <div class="head-in">
+    <a class="head-title" href="index.html">CYAN</a>
+    <span class="head-chapter">2 · 시안북스테이</span>
     <div class="head-side">
-      <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span class="head-cart-n" data-cart-count hidden>0</span>
-      </a>
-      <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
-        <span></span><span></span>
-      </button>
+      <a class="head-cart" href="shop.html#cart">장바구니<span class="head-cart-n" data-cart-count hidden>0</span></a>
+      <button class="head-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav">차례</button>
     </div>
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
-  <a href="index.html"><em>00</em> 처음</a>
-  <a href="about.html"><em>01</em> 브랜드</a>
-  <a href="stay.html"><em>02</em> 시안북스테이</a>
-  <a href="workshop.html"><em>03</em> 시안 공방</a>
-  <a href="gallery.html"><em>04</em> 시안 갤러리</a>
-  <a href="shop.html"><em>05</em> 시안 숍</a>
+<!-- ───────────────────────── 차례 ───────────────────────── -->
+<nav class="toc-layer mobile-nav" id="mobileNav" aria-label="차례" hidden>
+  <div class="toc-layer-in">
+    <p class="toc-label">차례</p>
+    <ol class="toc">
+      <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
+      <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여</span><span class="toc-page">9</span></a></li>
+      <li><a href="stay.html" aria-current="page"><span class="toc-no">2</span><span class="toc-name">시안북스테이</span><span class="toc-page">21</span></a></li>
+      <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방</span><span class="toc-page">37</span></a></li>
+      <li><a href="gallery.html"><span class="toc-no">4</span><span class="toc-name">시안 갤러리</span><span class="toc-page">49</span></a></li>
+      <li><a href="shop.html"><span class="toc-no">5</span><span class="toc-name">시안 숍</span><span class="toc-page">61</span></a></li>
+      <li><a href="about.html#visit"><span class="toc-no"></span><span class="toc-name">부록 · 오시는 길</span><span class="toc-page">75</span></a></li>
+      <li><a href="index.html#colophon"><span class="toc-no"></span><span class="toc-name">판권</span><span class="toc-page">79</span></a></li>
+    </ol>
+  </div>
 </nav>
+
+<div class="sheet">
 
 <main id="main">
 
-<header class="page-head page-head--sky">
-  <div class="wrap page-head-in">
-    <div class="page-head-text">
-      <p class="sect-eyebrow">House · Bookstay</p>
-      <h1 class="page-title">시안북스테이</h1>
-      <!-- ✏️ 북스테이 한 줄 소개 -->
-      <p class="page-lead">붉은 벽돌 뾰족집에서 하룻밤.<br>산으로 둘러싸인 호두마을에서 예술적으로 쉬어가세요.</p>
-      <div class="page-actions"><a class="btn" href="#book">예약하기</a></div>
-    </div>
-    <div class="page-head-art">
-      <img class="art art--house" src="assets/img/draw/house.png" alt="벽돌집 그림">
-    </div>
-  </div>
+<header class="opener">
+  <p class="opener-no">제2장</p>
+  <h1 class="opener-title">시안북스테이</h1>
+  <img class="opener-art" src="assets/img/book/house.png" alt="뾰족 지붕에 아치 창이 있는 HOUSE 펜 드로잉" width="371" height="421">
+  <!-- ✏️ 2장 첫 문장 -->
+  <p class="opener-epigraph">붉은 고벽돌로 지어진 작지만 높은 뾰족집.<br>문을 열면, 온통 노랑으로 가득한 내부가 따뜻하고 산뜻합니다.</p>
 </header>
 
-<!-- ───────────────────────── rooms (data.js → stay.rooms) ───────────────────────── -->
-<section class="sect sect--flush" id="rooms">
-  <div class="wrap">
-    <div class="rooms" id="stayRooms"></div>
-  </div>
+<!-- 방 목록은 data.js → stay.rooms 에서 자동으로 만들어집니다 -->
+<section class="page" id="rooms">
+  <h2 class="sect-title"><span class="sect-no">2.1</span>방</h2>
+  <div class="rooms" id="stayRooms"></div>
 </section>
 
-<!-- ───────────────────────── info ───────────────────────── -->
-<section class="sect sect--cream">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Information</p>
-    <h2 class="sect-title reveal">이용 안내</h2>
-    <dl class="info reveal">
-      <div><dt>체크인 · 아웃</dt><dd id="stayTimes">체크인 15:00 · 체크아웃 11:00</dd></div>
-      <div><dt>포함</dt><dd><ul class="dots" id="stayIncluded"></ul></dd></div>
-      <div><dt>요금</dt><dd>일 — 목 평일 요금 · 금 · 토 주말 요금<br><span class="muted">기준 인원 초과 시 1인당 추가 요금</span></dd></div>
-      <div><dt>문의</dt><dd><a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br><a class="link" data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a></dd></div>
-    </dl>
-  </div>
+<section class="page" id="info">
+  <h2 class="sect-title"><span class="sect-no">2.2</span>머무는 법</h2>
+  <dl class="glossary">
+    <div><dt>시간</dt><dd id="stayTimes">체크인 15:00 · 체크아웃 11:00</dd></div>
+    <div><dt>함께 드리는 것</dt><dd><ul class="dots" id="stayIncluded"></ul></dd></div>
+    <div><dt>요금</dt><dd>일 — 목은 평일 요금, 금 · 토는 주말 요금입니다. 기준 인원을 넘으면 한 분마다 하룻밤 추가 요금이 붙습니다.</dd></div>
+    <div><dt>문의</dt><dd><a class="link" data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a></dd></div>
+  </dl>
 </section>
 
-<!-- ───────────────────────── booking ───────────────────────── -->
-<section class="sect" id="book">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Reservation</p>
-    <h2 class="sect-title reveal">예약 신청</h2>
+<section class="page" id="book">
+  <h2 class="sect-title"><span class="sect-no">2.3</span>예약 신청</h2>
+  <p class="prose-note">아래 빈칸을 차례로 채워 주세요. 신청서가 도착하면 확인 문자를 드립니다.</p>
 
-    <form class="book reveal" id="stayForm" novalidate>
-      <div class="book-main">
+  <form class="book" id="stayForm" novalidate>
+    <fieldset class="book-step">
+      <legend><span>一</span>방</legend>
+      <div class="pick" id="stayPick"></div>
+    </fieldset>
 
-        <fieldset class="book-step">
-          <legend><span>1</span>객실</legend>
-          <div class="pick" id="stayPick"></div>
-        </fieldset>
+    <fieldset class="book-step">
+      <legend><span>二</span>날짜</legend>
+      <div class="cal" id="stayCal"></div>
+      <p class="cal-help" id="stayHelp" aria-live="polite">체크인 날짜를 고르세요.</p>
+      <ul class="cal-legend" aria-hidden="true">
+        <li><i class="is-sel"></i>고른 날</li>
+        <li><i class="is-full"></i>마감</li>
+        <li><i class="is-wknd"></i>주말 요금</li>
+      </ul>
+    </fieldset>
 
-        <fieldset class="book-step">
-          <legend><span>2</span>날짜</legend>
-          <div class="cal" id="stayCal"></div>
-          <p class="cal-help" id="stayHelp" aria-live="polite">체크인 날짜를 고르세요.</p>
-          <ul class="cal-legend" aria-hidden="true">
-            <li><i class="is-sel"></i>선택</li>
-            <li><i class="is-full"></i>마감</li>
-            <li><i class="is-wknd"></i>주말 요금</li>
-          </ul>
-        </fieldset>
-
-        <fieldset class="book-step">
-          <legend><span>3</span>인원</legend>
-          <div class="stepper" id="stayGuests">
-            <button type="button" data-step="-1" aria-label="인원 줄이기">−</button>
-            <output aria-live="polite">2</output>
-            <button type="button" data-step="1" aria-label="인원 늘리기">+</button>
-          </div>
-          <p class="muted" id="stayGuestHelp"></p>
-        </fieldset>
-
-        <fieldset class="book-step">
-          <legend><span>4</span>예약자 정보</legend>
-          <div class="fields">
-            <div class="field"><label for="sName">이름</label><input id="sName" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="sPhone">연락처</label><input id="sPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required pattern="[0-9\-+ ]{9,}"></div>
-            <div class="field field--full"><label for="sEmail">이메일 <small>선택</small></label><input id="sEmail" name="email" type="email" autocomplete="email"></div>
-            <div class="field field--full"><label for="sMemo">요청 사항 <small>선택</small></label><textarea id="sMemo" name="memo" rows="3" placeholder="도착 예정 시간, 기념일 등"></textarea></div>
-          </div>
-        </fieldset>
+    <fieldset class="book-step">
+      <legend><span>三</span>인원</legend>
+      <div class="stepper" id="stayGuests">
+        <button type="button" data-step="-1" aria-label="인원 줄이기">−</button>
+        <output aria-live="polite">2</output>
+        <button type="button" data-step="1" aria-label="인원 늘리기">+</button>
       </div>
+      <p class="muted" id="stayGuestHelp"></p>
+    </fieldset>
 
-      <aside class="book-sum" aria-label="예약 요약">
-        <p class="book-sum-title">예약 내용</p>
-        <dl class="sum" id="staySum"></dl>
-        <ul class="notice" id="stayNotice"></ul>
-        <div class="field field--check">
-          <label><input type="checkbox" id="sAgree" required> 이용 안내와 환불 규정을 확인했습니다.</label>
-        </div>
-        <button class="btn btn--block" type="submit" id="staySubmit" disabled>예약 신청하기</button>
-        <p class="form-msg" id="stayMsg" role="status"></p>
-      </aside>
-    </form>
+    <fieldset class="book-step">
+      <legend><span>四</span>예약하시는 분</legend>
+      <div class="fields">
+        <div class="field"><label for="sName">이름</label><input id="sName" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="sPhone">연락처</label><input id="sPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required pattern="[0-9\-+ ]{9,}"></div>
+        <div class="field field--full"><label for="sEmail">전자우편 <small>선택</small></label><input id="sEmail" name="email" type="email" autocomplete="email"></div>
+        <div class="field field--full"><label for="sMemo">남기실 말 <small>선택</small></label><textarea id="sMemo" name="memo" rows="3" placeholder="도착 예정 시간, 기념일 등"></textarea></div>
+      </div>
+    </fieldset>
 
-    <div class="done" id="stayDone" hidden tabindex="-1">
-      <p class="sect-eyebrow">Thank you</p>
-      <h3 class="done-title">예약 신청이 접수되었습니다</h3>
-      <p class="done-text" id="stayDoneText"></p>
-      <dl class="sum" id="stayDoneSum"></dl>
-      <div class="show-actions"><a class="btn btn--ghost" href="stay.html">처음으로</a></div>
-    </div>
+    <aside class="book-sum" aria-label="예약 내용">
+      <p class="book-sum-title">예약 내용</p>
+      <dl class="sum" id="staySum"></dl>
+      <ul class="notice" id="stayNotice"></ul>
+      <div class="field field--check">
+        <label><input type="checkbox" id="sAgree" required> 머무는 법과 환불 규정을 읽었습니다.</label>
+      </div>
+      <button class="btn btn--block" type="submit" id="staySubmit" disabled>예약 신청하기</button>
+      <p class="form-msg" id="stayMsg" role="status"></p>
+    </aside>
+  </form>
+
+  <div class="done" id="stayDone" hidden tabindex="-1">
+    <p class="part-label">감사합니다</p>
+    <h3 class="done-title">예약 신청이 접수되었습니다</h3>
+    <p class="done-text" id="stayDoneText"></p>
+    <dl class="sum" id="stayDoneSum"></dl>
+    <p><a class="link" href="stay.html">2장 처음으로</a></p>
   </div>
 </section>
 
 </main>
 
-<!-- ───────────────────────── footer ───────────────────────── -->
+<!-- ───────────────────────── 장의 끝 · 다음 장 ───────────────────────── -->
 <footer class="site-foot">
-  <div class="wrap foot-in">
-    <div class="foot-brand">
-      <a href="index.html" class="foot-logo"><span class="logo" aria-hidden="true"></span><span class="sr">CYAN 홈</span></a>
-      <p class="foot-slogan">예술적으로 쉬다.</p>
-    </div>
-    <nav class="foot-nav" aria-label="하단 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-    <div class="foot-info">
-      <p>광덕산 호두마을에 있어요.<br><span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span></p>
-      <p>여기로 연락주세요!<br>
-        <a data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br>
-        <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
-      </p>
-    </div>
-    <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
-  </div>
+  <nav class="turn" aria-label="앞뒤 장">
+    <a class="turn-prev" href="about.html"><small>앞 장</small>1장 시안에 대하여</a>
+    <a class="turn-next" href="workshop.html"><small>다음 장</small>3장 시안 공방</a>
+  </nav>
+  <p class="folio">— 21 —</p>
+  <p class="foot-copy">CYAN · 예술적으로 쉬다. · © <span id="year">2026</span></p>
 </footer>
+
+</div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
 <script src="assets/js/main.js" defer></script>

@@ -3,103 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>시안 갤러리 — CYAN</title>
-<meta name="description" content="시안 갤러리의 지금 전시와 지난 전시 아카이브.">
-<meta name="theme-color" content="#FFFDF6">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<title>4장 시안 갤러리 — CYAN</title>
+<meta name="description" content="시안 갤러리의 지금 걸린 전시와 지난 전시 기록.">
+<meta name="theme-color" content="#ECE8DF">
+<link rel="icon" href="assets/img/book/favicon.png" type="image/png">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="시안 갤러리 — CYAN">
-<meta property="og:description" content="시안 갤러리의 지금 전시와 지난 전시 아카이브.">
-<meta property="og:image" content="assets/img/draw/hero.webp">
+<meta property="og:type" content="book">
+<meta property="og:title" content="4장 시안 갤러리 — CYAN">
+<meta property="og:description" content="시안 갤러리의 지금 걸린 전시와 지난 전시 기록.">
+<meta property="og:image" content="assets/img/book/drawing.png">
 <meta property="og:locale" content="ko_KR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page">
+<body class="chapter">
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
-<!-- ───────────────────────── header ───────────────────────── -->
+<!-- ───────────────────────── 머리말 (책의 running head) ───────────────────────── -->
 <header class="site-head" id="siteHead">
-  <div class="wrap head-in">
-    <a class="head-logo" href="index.html">
-      <span class="logo" aria-hidden="true"></span>
-      <span class="sr">CYAN 홈</span>
-    </a>
-
-    <nav class="head-nav" aria-label="주요 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html" aria-current="page">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-
+  <div class="head-in">
+    <a class="head-title" href="index.html">CYAN</a>
+    <span class="head-chapter">4 · 시안 갤러리</span>
     <div class="head-side">
-      <a class="head-cart" href="shop.html#cart" aria-label="장바구니">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.5 8.5h13l-1 11a1.6 1.6 0 0 1-1.6 1.5H8.1a1.6 1.6 0 0 1-1.6-1.5l-1-11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span class="head-cart-n" data-cart-count hidden>0</span>
-      </a>
-      <button class="head-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="메뉴 열기">
-        <span></span><span></span>
-      </button>
+      <a class="head-cart" href="shop.html#cart">장바구니<span class="head-cart-n" data-cart-count hidden>0</span></a>
+      <button class="head-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav">차례</button>
     </div>
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴" hidden>
-  <a href="index.html"><em>00</em> 처음</a>
-  <a href="about.html"><em>01</em> 브랜드</a>
-  <a href="stay.html"><em>02</em> 시안북스테이</a>
-  <a href="workshop.html"><em>03</em> 시안 공방</a>
-  <a href="gallery.html"><em>04</em> 시안 갤러리</a>
-  <a href="shop.html"><em>05</em> 시안 숍</a>
+<!-- ───────────────────────── 차례 ───────────────────────── -->
+<nav class="toc-layer mobile-nav" id="mobileNav" aria-label="차례" hidden>
+  <div class="toc-layer-in">
+    <p class="toc-label">차례</p>
+    <ol class="toc">
+      <li><a href="index.html#preface"><span class="toc-no"></span><span class="toc-name">서문</span><span class="toc-page">3</span></a></li>
+      <li><a href="about.html"><span class="toc-no">1</span><span class="toc-name">시안에 대하여</span><span class="toc-page">9</span></a></li>
+      <li><a href="stay.html"><span class="toc-no">2</span><span class="toc-name">시안북스테이</span><span class="toc-page">21</span></a></li>
+      <li><a href="workshop.html"><span class="toc-no">3</span><span class="toc-name">시안 공방</span><span class="toc-page">37</span></a></li>
+      <li><a href="gallery.html" aria-current="page"><span class="toc-no">4</span><span class="toc-name">시안 갤러리</span><span class="toc-page">49</span></a></li>
+      <li><a href="shop.html"><span class="toc-no">5</span><span class="toc-name">시안 숍</span><span class="toc-page">61</span></a></li>
+      <li><a href="about.html#visit"><span class="toc-no"></span><span class="toc-name">부록 · 오시는 길</span><span class="toc-page">75</span></a></li>
+      <li><a href="index.html#colophon"><span class="toc-no"></span><span class="toc-name">판권</span><span class="toc-page">79</span></a></li>
+    </ol>
+  </div>
 </nav>
+
+<div class="sheet">
 
 <main id="main">
 
-<header class="page-head page-head--green">
-  <div class="wrap page-head-in">
-    <div class="page-head-text">
-      <p class="sect-eyebrow">Gallery</p>
-      <h1 class="page-title">시안 갤러리</h1>
-      <!-- ✏️ 갤러리 한 줄 소개 -->
-      <p class="page-lead">벽돌 아치와 달 조명 아래, 전시와 공연과 아트살롱.<br>화 — 일 12:00 — 19:00</p>
-    </div>
-    <div class="page-head-art">
-      <img class="art art--gallery" src="assets/img/draw/gallery.png" alt="갤러리 건물 그림">
-    </div>
-  </div>
+<header class="opener">
+  <p class="opener-no">제4장</p>
+  <h1 class="opener-title">시안 갤러리</h1>
+  <img class="opener-art opener-art--wide" src="assets/img/book/gallery.png" alt="네모난 2층 건물과 테라스 난간이 그려진 GALLERY 펜 드로잉" width="676" height="476">
+  <!-- ✏️ 4장 첫 문장 -->
+  <p class="opener-epigraph">일층과 이층이 30도의 각도를 이루며 마당을 안아줍니다.<br>벽돌 아치와 달 조명 아래, 한 번에 한 사람의 작업을 겁니다.</p>
 </header>
 
-<!-- 전시 목록은 모두 data.js → exhibitions 에서 자동으로 만들어집니다 -->
-<section class="sect sect--flush" id="now">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Now Showing</p>
-    <h2 class="sect-title reveal">지금 전시</h2>
-    <div id="galNow"></div>
-  </div>
+<!-- 전시는 data.js → exhibitions 에서 날짜에 따라 자동으로 나뉩니다 -->
+<section class="page" id="now">
+  <h2 class="sect-title"><span class="sect-no">4.1</span>지금 걸린 전시</h2>
+  <div id="galNow"></div>
 </section>
 
-<section class="sect" id="next" hidden>
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Upcoming</p>
-    <h2 class="sect-title reveal">예정 전시</h2>
-    <ul class="showlist reveal" id="galNext"></ul>
-  </div>
+<section class="page" id="next" hidden>
+  <h2 class="sect-title"><span class="sect-no">4.2</span>다음 전시</h2>
+  <ul class="showlist" id="galNext"></ul>
 </section>
 
-<section class="sect sect--cream" id="archive">
-  <div class="wrap">
-    <p class="sect-eyebrow reveal">Archive</p>
-    <h2 class="sect-title reveal">지난 전시</h2>
-    <div class="tabs reveal" id="galYears" role="tablist" aria-label="연도"></div>
-    <ul class="archive" id="galArchive"></ul>
-  </div>
+<section class="page" id="archive">
+  <h2 class="sect-title"><span class="sect-no">4.3</span>지난 전시</h2>
+  <div class="tabs" id="galYears" role="tablist" aria-label="연도"></div>
+  <ul class="archive" id="galArchive"></ul>
 </section>
 
 </main>
@@ -111,30 +90,17 @@
   </div>
 </dialog>
 
-<!-- ───────────────────────── footer ───────────────────────── -->
+<!-- ───────────────────────── 장의 끝 · 다음 장 ───────────────────────── -->
 <footer class="site-foot">
-  <div class="wrap foot-in">
-    <div class="foot-brand">
-      <a href="index.html" class="foot-logo"><span class="logo" aria-hidden="true"></span><span class="sr">CYAN 홈</span></a>
-      <p class="foot-slogan">예술적으로 쉬다.</p>
-    </div>
-    <nav class="foot-nav" aria-label="하단 메뉴">
-      <a href="about.html">브랜드</a>
-      <a href="stay.html">북스테이</a>
-      <a href="workshop.html">공방</a>
-      <a href="gallery.html">갤러리</a>
-      <a href="shop.html">숍</a>
-    </nav>
-    <div class="foot-info">
-      <p>광덕산 호두마을에 있어요.<br><span data-site="address">충남 천안시 동남구 광덕면 만복골3길 10</span></p>
-      <p>여기로 연락주세요!<br>
-        <a data-site="email" href="mailto:cyan.gallery.house@gmail.com">cyan.gallery.house@gmail.com</a><br>
-        <a data-site="instagram" href="https://instagram.com/cyan_gallery.house" target="_blank" rel="noopener">@cyan_gallery.house ↗</a>
-      </p>
-    </div>
-    <p class="foot-copy">© <span id="year">2026</span> CYAN gallery house</p>
-  </div>
+  <nav class="turn" aria-label="앞뒤 장">
+    <a class="turn-prev" href="workshop.html"><small>앞 장</small>3장 시안 공방</a>
+    <a class="turn-next" href="shop.html"><small>다음 장</small>5장 시안 숍</a>
+  </nav>
+  <p class="folio">— 49 —</p>
+  <p class="foot-copy">CYAN · 예술적으로 쉬다. · © <span id="year">2026</span></p>
 </footer>
+
+</div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
 <script src="assets/js/main.js" defer></script>
