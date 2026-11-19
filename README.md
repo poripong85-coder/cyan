@@ -91,9 +91,8 @@ python3 -m http.server 8000
 | `--blue` | `#2B4D8F` | 시안 파랑 — 링크에만 조금 |
 | `--sheet`, `--measure` | `860px`, `34em` | 종이 폭, 한 줄 길이 |
 
-글꼴은 Google Fonts의 나눔손글씨 펜(Nanum Pen Script) 하나로 통일했습니다.
-손글씨가 작게 그려지는 만큼 `--adjust`(font-size-adjust) 값으로 전체를 키웁니다. 글씨가 작거나 크면 이 값만 조절하세요.
-그림 크기는 `.cover-art`, `.opener-art`, `.plate img`의 `width`로 조절합니다.
+글꼴은 Google Fonts에서 두 가지를 씁니다: 본문은 책 느낌의 고운바탕, 제목 · 장 번호 · 숫자는 연필 손글씨 하이멜로디(Hi Melody).
+`--serif`(본문)와 `--pen`(손글씨) 값만 바꾸면 전체 글꼴이 바뀝니다.
 
 ## 배포 — GitHub Pages
 

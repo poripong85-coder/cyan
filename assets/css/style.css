@@ -1,7 +1,7 @@
 /* ============================================================
    CYAN — 예술적으로 쉬다.
    ------------------------------------------------------------
-   한 권의 책처럼: 책상 위에 펼친 종이 한 장, 펜 손글씨, 넉넉한 여백.
+   한 권의 책처럼: 책상 위에 펼친 종이 한 장, 명조 본문과 손글씨 제목, 넉넉한 여백.
    그림은 HOUSE · GALLERY 펜 드로잉 하나만 씁니다 (assets/img/book/).
    색과 크기는 :root 의 토큰만 고치면 전체에 반영됩니다.
    ============================================================ */
@@ -17,9 +17,9 @@
   --rule-2: rgba(30,30,28,.08);
   --blue:   #2B4D8F;   /* 시안 — 링크에만 아주 조금 */
 
-  --serif: "Nanum Pen Script", "Gaegu", cursive;   /* 펜 손글씨 */
-  --latin: var(--serif);
-  --adjust: .56;    /* 손글씨가 작게 그려지는 만큼 키우는 비율 (font-size-adjust) */
+  --serif: "Gowun Batang", "Noto Serif KR", serif;   /* 본문 — 책 명조 */
+  --pen:   "Hi Melody", "Gowun Batang", cursive;      /* 제목 · 숫자 — 연필 손글씨 */
+  --latin: var(--pen);
 
   --sheet: 860px;                    /* 종이 폭 */
   --pad: clamp(22px, 8vw, 96px);     /* 종이 안쪽 여백 */
@@ -38,8 +38,7 @@ body{
   color:var(--ink);
   font-family:var(--serif);
   font-size:17px;
-  font-size-adjust:var(--adjust);
-  line-height:1.75;
+  line-height:2;
   letter-spacing:0;
   word-break:keep-all;
   -webkit-font-smoothing:antialiased;
@@ -48,10 +47,12 @@ body{
 
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
-h1,h2,h3{ margin:0; font-weight:400; line-height:1.4; }
+h1,h2,h3{ margin:0; font-family:var(--pen); font-weight:400; line-height:1.3; }
+.toc-name, .door-name, .turn a{ font-family:var(--pen); }
+.toc-name small, .turn a small{ font-family:var(--serif); }
 p{ margin:0; }
 ul,ol,dl,dd{ margin:0; padding:0; list-style:none; }
-button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
+button, input, textarea{ font-family:inherit; }
 
 .skip{ position:absolute; left:-9999px; top:0; z-index:300; background:var(--ink); color:var(--paper); padding:10px 16px; font-size:14px; }
 .skip:focus{ left:12px; top:12px; }
@@ -89,7 +90,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   height:58px; padding:0 var(--pad);
   font-size:13px; color:var(--ink-2);
 }
-.head-title{ font-family:var(--latin); font-size:16px; font-weight:400; letter-spacing:.2em; color:var(--ink); justify-self:start; }
+.head-title{ font-family:var(--latin); font-size:20px; font-weight:400; letter-spacing:.2em; color:var(--ink); justify-self:start; }
 .head-chapter{ font-size:12.5px; color:var(--ink-3); letter-spacing:.02em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .head-side{ justify-self:end; display:flex; align-items:center; gap:18px; }
 .head-cart, .head-toggle{
@@ -98,7 +99,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   border-bottom:1px solid transparent; transition:color .2s, border-color .2s;
 }
 .head-cart:hover, .head-toggle:hover{ color:var(--ink); border-bottom-color:var(--ink); }
-.head-cart-n{ margin-left:4px; font-family:var(--latin); font-size:14px; color:var(--blue); }
+.head-cart-n{ margin-left:4px; font-family:var(--latin); font-size:18px; color:var(--blue); }
 .head-cart-n::before{ content:"("; } .head-cart-n::after{ content:")"; }
 .head-cart-n[hidden]{ display:none; }
 .head-toggle[aria-expanded="true"]{ color:var(--ink); }
@@ -135,12 +136,12 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   transition:color .2s;
 }
 .toc a:hover{ color:var(--blue); }
-.toc-no{ align-self:stretch; background:var(--paper); font-family:var(--latin); font-size:20px; line-height:1.6; color:var(--ink-3); }
-.toc-name{ justify-self:start; padding-right:.6em; background:var(--paper); font-size:17px; }
+.toc-no{ align-self:stretch; background:var(--paper); font-family:var(--latin); font-size:25px; line-height:1.6; color:var(--ink-3); }
+.toc-name{ justify-self:start; padding-right:.6em; background:var(--paper); font-size:21px; line-height:1.5; }
 .toc-name small{ display:block; font-size:13px; color:var(--ink-3); line-height:1.6; }
-.toc-page{ padding-left:.6em; background:var(--paper); font-family:var(--latin); font-size:18px; color:var(--ink-2); }
+.toc-page{ padding-left:.6em; background:var(--paper); font-family:var(--latin); font-size:22px; color:var(--ink-2); }
 .toc a[aria-current="page"] .toc-name{ color:var(--blue); }
-.toc--page .toc-name{ font-size:18px; }
+.toc--page .toc-name{ font-size:23px; }
 .toc--page a{ padding:14px 0; background-position:0 1.8em; }
 
 /* ── 표지 ─────────────────────────────────────────────────── */
@@ -157,7 +158,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .cover-art{ width:min(240px, 58%); height:auto; margin-bottom:48px; animation:ink 1.6s var(--ease) both; }
 .cover-title{
   font-family:var(--latin); font-weight:400;
-  font-size:clamp(46px,8vw,72px); letter-spacing:.24em; padding-left:.24em; line-height:1;
+  font-size:clamp(54px,9vw,84px); letter-spacing:.2em; padding-left:.2em; line-height:1;
   animation:rise 1.2s var(--ease) .5s both;
 }
 .cover-sub{ margin-top:16px; font-size:20px; letter-spacing:.04em; animation:rise 1.2s var(--ease) .7s both; }
@@ -180,7 +181,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .door{ display:flex; flex-direction:column; align-items:center; gap:2px; transition:transform .4s var(--ease); }
 .door img{ height:78px; width:auto; transition:transform .4s var(--ease); }
 .door--wide img{ height:84px; }
-.door-name{ margin-top:12px; font-size:17px; line-height:1.2; }
+.door-name{ margin-top:12px; font-size:21px; line-height:1.2; }
 .door-ch{ font-size:12px; color:var(--ink-3); }
 .door:hover img{ transform:translateY(-6px) rotate(-1.5deg); }
 .door:hover .door-name{ color:var(--blue); }
@@ -189,7 +190,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .press{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
 .press-item{ padding:28px 26px 26px; border:1px solid var(--rule); background:var(--paper); }
 .press-kind{ font-size:13px; letter-spacing:.2em; color:var(--ink-3); }
-.press-title{ margin-top:8px; font-size:26px; line-height:1.3; }
+.press-title{ margin-top:8px; font-size:30px; line-height:1.3; }
 .press-sub{ font-size:16px; color:var(--ink-2); }
 .press-text{ margin:14px 0 16px; font-size:16px; line-height:1.8; }
 .press .xref{ margin-left:0; }
@@ -203,7 +204,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   border-bottom:1px solid var(--rule-2);
 }
 .opener-no{ font-size:15px; letter-spacing:.2em; padding-left:.2em; color:var(--ink-2); animation:rise 1s var(--ease) both; }
-.opener-title{ margin-top:18px; font-size:clamp(30px,4.6vw,42px); letter-spacing:-.02em; animation:rise 1s var(--ease) .12s both; }
+.opener-title{ margin-top:18px; font-size:clamp(38px,5.8vw,52px); letter-spacing:0; animation:rise 1s var(--ease) .12s both; }
 .opener-title::after{ content:""; display:block; width:28px; height:1px; margin:30px auto 0; background:var(--ink); }
 .opener-art{ width:min(120px,34%); height:auto; margin-top:52px; animation:ink 1.4s var(--ease) .25s both; }
 .opener-art--wide{ width:min(210px,56%); }
@@ -219,8 +220,8 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .page + .page{ border-top:1px solid var(--rule-2); }
 .page--appendix, .page--colophon{ background:var(--tint); }
 
-.sect-title{ font-size:22px; letter-spacing:-.02em; margin-bottom:32px; }
-.sect-no{ font-family:var(--latin); font-size:20px; color:var(--ink-3); margin-right:.8em; letter-spacing:0; }
+.sect-title{ font-size:28px; letter-spacing:0; margin-bottom:30px; }
+.sect-no{ font-family:var(--latin); font-size:25px; color:var(--ink-3); margin-right:.8em; letter-spacing:0; }
 .page--appendix .sect-title{ text-align:center; margin-top:-24px; }
 
 .prose{ max-width:var(--measure); }
@@ -251,7 +252,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .route{ max-width:var(--measure); margin:32px 0 40px; counter-reset:r; }
 .route li{ position:relative; padding-left:2.4em; counter-increment:r; }
 .route li + li{ margin-top:.8em; }
-.route li::before{ content:counter(r); position:absolute; left:0; top:-.05em; font-family:var(--latin); font-size:20px; color:var(--ink-3); }
+.route li::before{ content:counter(r); position:absolute; left:0; top:-.05em; font-family:var(--latin); font-size:25px; color:var(--ink-3); }
 
 .dots li{ display:inline; }
 .dots li + li::before{ content:" · "; color:var(--ink-3); }
@@ -259,7 +260,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 /* ── 판권 ─────────────────────────────────────────────────── */
 
 .colophon{ max-width:28em; margin:0 auto; }
-.colophon-title{ font-family:var(--latin); font-size:26px; letter-spacing:.16em; line-height:1.5; margin-bottom:28px; }
+.colophon-title{ font-family:var(--latin); font-size:32px; letter-spacing:.16em; line-height:1.5; margin-bottom:28px; }
 .colophon-title span{ font-size:17px; letter-spacing:.02em; }
 .colophon dl{ border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:12px 0; }
 .colophon dl > div{ display:grid; grid-template-columns:6em minmax(0,1fr); gap:14px; padding:4px 0; font-size:14px; line-height:1.9; }
@@ -309,8 +310,8 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .room{ padding:28px 0 32px; border-top:1px solid var(--rule); }
 .room:last-child{ border-bottom:1px solid var(--rule); }
 .room-visual{ margin-bottom:22px; }
-.room .tile-no{ font-family:var(--latin); font-size:15px; letter-spacing:.08em; color:var(--ink-3); }
-.room-name{ font-size:22px; margin:2px 0 10px; }
+.room .tile-no{ font-family:var(--latin); font-size:19px; letter-spacing:.08em; color:var(--ink-3); }
+.room-name{ font-size:28px; margin:2px 0 8px; }
 .room-text{ font-size:16px; line-height:1.95; }
 .room .dots{ margin-top:10px; font-size:14px; color:var(--ink-2); }
 .room-meta{ margin-top:16px; }
@@ -374,13 +375,13 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .cal-nav button:hover:not(:disabled){ border-color:var(--ink); }
 .cal-nav button:disabled{ opacity:.3; cursor:default; }
 .cal-months{ display:grid; grid-template-columns:repeat(auto-fit,minmax(0,1fr)); gap:clamp(18px,4vw,40px); }
-.cal-title{ font-family:var(--latin); font-size:20px; letter-spacing:.06em; line-height:30px; margin-bottom:8px; }
+.cal-title{ font-family:var(--latin); font-size:25px; letter-spacing:.06em; line-height:30px; margin-bottom:8px; }
 .cal-grid{ display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:2px 0; }
 .cal-wd{ text-align:center; font-size:11.5px; color:var(--ink-3); padding-bottom:6px; border-bottom:1px solid var(--rule-2); margin-bottom:4px; }
 .cal-day{
   position:relative; aspect-ratio:1/1; max-height:42px; width:100%;
   border:0; background:none; cursor:pointer; padding:0;
-  font-family:var(--latin); font-size:17px; color:var(--ink);
+  font-family:var(--latin); font-size:21px; color:var(--ink);
   transition:background .15s;
 }
 .cal-day.is-wknd:not(:disabled){ color:var(--blue); }
@@ -404,7 +405,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .stepper button{ width:44px; height:44px; border:0; background:none; cursor:pointer; font-size:18px; color:var(--ink); transition:background .2s; }
 .stepper button:hover:not(:disabled){ background:var(--tint); }
 .stepper button:disabled{ color:var(--ink-3); opacity:.5; cursor:default; }
-.stepper output{ min-width:44px; text-align:center; font-family:var(--latin); font-size:20px; }
+.stepper output{ min-width:44px; text-align:center; font-family:var(--latin); font-size:25px; }
 .stepper--sm button{ width:30px; height:30px; font-size:14px; }
 .stepper--sm output{ min-width:26px; font-size:16px; }
 .book-step .stepper + .muted{ margin-top:10px; font-size:13px; }
@@ -437,7 +438,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .done{ max-width:36em; padding:40px clamp(20px,4vw,40px); border:1px solid var(--ink); }
 .done:focus{ outline:none; }
 .done .part-label{ text-align:left; margin-bottom:16px; padding-left:0; }
-.done-title{ font-size:22px; margin-bottom:12px; }
+.done-title{ font-size:28px; margin-bottom:12px; }
 .done-text{ font-size:15px; line-height:1.95; color:var(--ink-2); margin-bottom:20px; }
 .done .sum{ margin-bottom:20px; }
 
@@ -448,7 +449,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .slots-times{ display:flex; flex-wrap:wrap; gap:6px; }
 .slot{
   min-height:34px; padding:0 14px; border:1px solid var(--rule); background:none; cursor:pointer;
-  font-family:var(--latin); font-size:16px; color:var(--ink);
+  font-family:var(--latin); font-size:20px; color:var(--ink);
   transition:border-color .2s, background .2s, color .2s;
 }
 .slot:hover:not(:disabled){ border-color:var(--ink); }
@@ -461,15 +462,15 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .show{ max-width:var(--measure); }
 .show + .show{ margin-top:48px; padding-top:48px; border-top:1px solid var(--rule-2); }
 .show-visual{ margin-bottom:24px; }
-.show-meta{ font-family:var(--latin); font-size:17px; letter-spacing:.06em; color:var(--ink-2); }
-.show-title{ margin:6px 0 2px; font-size:clamp(24px,3.2vw,30px); letter-spacing:-.02em; }
+.show-meta{ font-family:var(--latin); font-size:21px; letter-spacing:.06em; color:var(--ink-2); }
+.show-title{ margin:6px 0 2px; font-size:clamp(30px,4vw,38px); letter-spacing:0; }
 .show-title::before{ content:"〈"; color:var(--ink-3); } .show-title::after{ content:"〉"; color:var(--ink-3); }
 .show-artist{ font-size:15px; color:var(--ink-2); }
 .show-text{ margin-top:18px; font-size:16px; line-height:2; }
 
 .showlist{ max-width:var(--measure); border-top:1px solid var(--rule); }
 .showlist li{ display:grid; grid-template-columns:6em minmax(0,1fr) auto; gap:4px 16px; align-items:baseline; padding:14px 0; border-bottom:1px solid var(--rule-2); }
-.showlist-date{ font-family:var(--latin); font-size:16px; color:var(--ink-2); grid-row:1 / 3; }
+.showlist-date{ font-family:var(--latin); font-size:20px; color:var(--ink-2); grid-row:1 / 3; }
 .showlist-title{ font-size:16.5px; }
 .showlist-artist{ grid-column:2; font-size:13.5px; color:var(--ink-3); }
 .showlist-state{ grid-column:3; grid-row:1; font-size:12px; color:var(--ink-3); }
@@ -497,7 +498,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .archive-item button:hover{ background:var(--tint); padding-left:10px; padding-right:10px; }
 .archive-item button:hover::after{ transform:translateX(3px); color:var(--ink); }
 .archive-item .frame{ display:none; }
-.archive-date{ grid-row:1 / 3; font-family:var(--latin); font-size:15px; color:var(--ink-2); }
+.archive-date{ grid-row:1 / 3; font-family:var(--latin); font-size:19px; color:var(--ink-2); }
 .archive-title{ grid-column:2; font-size:16.5px; }
 .archive-artist{ grid-column:2; font-size:13.5px; color:var(--ink-3); }
 .archive .empty{ padding:16px 0; }
@@ -507,9 +508,9 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .series{ max-width:var(--measure); }
 .series + .series{ margin-top:56px; }
 .series-head{ margin-bottom:14px; }
-.series-no{ font-family:var(--latin); font-size:15px; letter-spacing:.08em; color:var(--ink-3); }
-.series-name{ margin:2px 0 6px; font-size:22px; }
-.series-name em{ font-family:var(--latin); font-style:normal; font-size:17px; color:var(--ink-2); margin-left:8px; }
+.series-no{ font-family:var(--latin); font-size:19px; letter-spacing:.08em; color:var(--ink-3); }
+.series-name{ margin:2px 0 6px; font-size:28px; }
+.series-name em{ font-family:var(--latin); font-style:normal; font-size:21px; color:var(--ink-2); margin-left:8px; }
 .series-text{ font-size:15px; line-height:1.9; color:var(--ink-2); }
 .series--archive .series-name::after{ content:"기록"; margin-left:10px; font-size:12px; color:var(--ink-3); border:1px solid var(--rule); padding:1px 6px; vertical-align:middle; }
 
@@ -538,10 +539,10 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 .modal-in{ position:relative; padding:clamp(32px,6vw,56px); }
 .modal-x{ position:absolute; top:12px; right:14px; width:36px; height:36px; border:0; background:none; cursor:pointer; font-size:24px; color:var(--ink-2); }
 .modal-x:hover{ color:var(--ink); }
-.modal-title{ margin:6px 0 4px; font-size:24px; }
+.modal-title{ margin:6px 0 4px; font-size:30px; }
 .modal-body > .frame{ margin-bottom:22px; }
 .modal-body .part-label{ text-align:left; margin-bottom:12px; padding-left:0; }
-.modal-body .show-title{ font-size:24px; }
+.modal-body .show-title{ font-size:30px; }
 
 .modal--drawer{ margin:0 0 0 auto; width:min(460px,100%); height:100dvh; max-height:none; border-width:0 0 0 1px; }
 .modal--drawer[open]{ animation:slide .45s var(--ease); }
@@ -576,13 +577,13 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
 
 .site-foot{ padding:72px var(--pad) 40px; border-top:1px solid var(--rule-2); text-align:center; }
 .turn{ display:flex; justify-content:space-between; gap:20px; text-align:left; }
-.turn a{ display:flex; flex-direction:column; font-size:16px; transition:color .2s; }
+.turn a{ display:flex; flex-direction:column; font-size:21px; line-height:1.4; transition:color .2s; }
 .turn a small{ font-size:13px; letter-spacing:.06em; color:var(--ink-3); margin-bottom:2px; }
 .turn a:hover{ color:var(--blue); }
 .turn-prev small::before{ content:"← "; }
 .turn-next{ text-align:right; margin-left:auto; }
 .turn-next small::after{ content:" →"; }
-.folio{ margin-top:56px; font-family:var(--latin); font-size:16px; color:var(--ink-3); letter-spacing:.1em; }
+.folio{ margin-top:56px; font-family:var(--latin); font-size:20px; color:var(--ink-3); letter-spacing:.1em; }
 .foot-copy{ margin-top:6px; font-size:11.5px; color:var(--ink-3); letter-spacing:.06em; }
 
 /* ── 천천히 나타나기 ──────────────────────────────────────── */
@@ -605,7 +606,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   .doors{ gap:18px; }
   .door img{ height:56px; }
   .door--wide img{ height:60px; }
-  .door-name{ font-size:15px; }
+  .door-name{ font-size:18px; }
   .press{ grid-template-columns:1fr; }
   .cover-title{ letter-spacing:.3em; padding-left:.3em; }
   .glossary > div, .colophon dl > div{ grid-template-columns:1fr; gap:0; }
@@ -620,7 +621,7 @@ button, input, textarea{ font-family:inherit; font-size-adjust:inherit; }
   .showlist-date{ grid-row:auto; }
   .showlist-title, .showlist-artist{ grid-column:1; }
   .showlist-state{ grid-column:2; grid-row:1; }
-  .turn a{ font-size:14.5px; }
+  .turn a{ font-size:19px; }
   .toc-layer-in{ padding-top:96px; }
 }
 
