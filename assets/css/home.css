@@ -1,0 +1,262 @@
+/* ============================================================
+   시안 — 홈
+   색은 :root 토큰만 바꾸면 전체에 반영됩니다.
+   ============================================================ */
+
+:root{
+  --paper:   #F6F3EC;   /* 종이 */
+  --sheet:   #FBFAF6;   /* 패널 안쪽 */
+  --ink:     #34291F;   /* 펜 잉크 (짙은 갈색) */
+  --ink-soft:#7A6E62;
+  --rule:    rgba(52,41,31,.16);
+  --water:   #D7E9EA;   /* 강 */
+  --accent:  #1E858D;   /* 시안 */
+  --accent-soft: rgba(30,133,141,.12);
+
+  --hand: 255px 12px 225px 14px / 14px 225px 12px 255px;  /* 손으로 그린 테두리 */
+  --font: "Gowun Dodum", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --title: "Gowun Batang", "Apple SD Gothic Neo", serif;
+  color-scheme: light;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,p,figure{ margin:0; }
+button,input,textarea{ font:inherit; color:inherit; }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+::selection{ background:var(--accent); color:#fff; }
+
+.sr-only{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+.page{
+  max-width:980px;
+  margin-inline:auto;
+  padding:clamp(28px,6vw,64px) clamp(16px,4vw,40px) 40px;
+}
+
+/* ───────── header ───────── */
+.head{ margin-bottom:clamp(40px,9vw,110px); }
+.brand{ display:inline-flex; align-items:center; gap:14px; }
+.brand-icon{ width:36px; height:40px; }
+.brand-word{
+  font-family:var(--title);
+  font-size:30px;
+  letter-spacing:.04em;
+}
+.brand-word i{ font-style:normal; color:var(--accent); margin-left:2px; }
+
+/* ───────── panel (손그림 테두리) ───────── */
+.panel{
+  position:relative;
+  background:var(--sheet);
+  border:2px solid var(--ink);
+  border-radius:var(--hand);
+  box-shadow:3px 4px 0 rgba(52,41,31,.06);
+}
+.panel + .panel{ margin-top:clamp(18px,3vw,30px); }
+
+/* ───────── map ───────── */
+.map{
+  aspect-ratio: 3 / 2;
+  overflow:hidden;
+}
+.map-art{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  color:var(--ink);
+}
+
+.legend{
+  position:absolute;
+  left:clamp(16px,3.2vw,30px);
+  top:24%;
+  z-index:2;
+  display:grid;
+  gap:clamp(6px,1.4vw,14px);
+}
+.legend a{
+  display:grid;
+  grid-template-columns:auto 26px;
+  align-items:center;
+  column-gap:14px;
+  padding:2px 8px 2px 4px;
+  border-radius:8px;
+  font-size:clamp(15px,2.2vw,20px);
+  transition:background .2s, color .2s;
+}
+.legend span{ min-width:5.2em; }
+.legend svg{
+  width:26px; height:26px;
+  fill:none; stroke:currentColor; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+
+/* 지도 속 요소 */
+.river-water{ fill:var(--water); stroke:none; opacity:.75; }
+.place{ cursor:pointer; outline:none; }
+.place .hit{ fill:transparent; stroke:none; }
+.place .fill{ fill:transparent; stroke:none; transition:fill .25s; }
+.place .tag{
+  fill:var(--accent);
+  stroke:none;
+  font-family:var(--font);
+  font-size:17px;
+  text-anchor:middle;
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity .25s, transform .25s;
+}
+.place > :not(.hit):not(.tag):not(.fill){ transition:stroke .25s; }
+
+/* 범례 ↔ 지도 하이라이트 (JS가 .is-on 을 붙임) */
+.legend a.is-on{ background:var(--accent-soft); color:var(--accent); }
+.place.is-on > :not(.hit):not(.tag):not(.fill){ stroke:var(--accent); }
+.place.is-on .fill{ fill:var(--accent-soft); }
+.place.is-on .tag{ opacity:1; transform:none; }
+
+/* ───────── guestbook ───────── */
+.guest{
+  display:grid;
+  grid-template-columns:1fr minmax(220px, 34%);
+  gap:clamp(18px,3vw,32px);
+  padding:clamp(18px,3vw,28px);
+}
+.guest-title{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--title);
+  font-size:22px;
+  font-weight:400;
+  margin-bottom:14px;
+}
+.guest-title svg{ width:18px; height:18px; fill:var(--ink); }
+
+.guest-form{
+  display:grid;
+  grid-template-columns:120px 1fr auto;
+  gap:8px;
+  margin-bottom:16px;
+}
+.guest-form input,
+.guest-form textarea{
+  width:100%;
+  background:transparent;
+  border:0;
+  border-bottom:1.5px solid var(--rule);
+  padding:8px 2px;
+  resize:none;
+  transition:border-color .2s;
+}
+.guest-form textarea{ min-height:42px; }
+.guest-form input:focus,
+.guest-form textarea:focus{ outline:none; border-bottom-color:var(--accent); }
+.guest-form button{
+  align-self:end;
+  border:1.5px solid var(--ink);
+  border-radius:var(--hand);
+  background:transparent;
+  padding:7px 16px;
+  cursor:pointer;
+  transition:background .2s, color .2s;
+}
+.guest-form button:hover{ background:var(--ink); color:var(--sheet); }
+
+.guest-list{
+  max-height:260px;
+  overflow:auto;
+  padding-right:6px;
+}
+.guest-list li{
+  padding:11px 0;
+  border-top:1px dashed var(--rule);
+}
+.guest-list li:first-child{ border-top:0; }
+.guest-list .who{ font-weight:700; font-size:14px; }
+.guest-list .when{ color:var(--ink-soft); font-size:12px; margin-left:8px; }
+.guest-list p{ margin-top:2px; font-size:15px; overflow-wrap:anywhere; }
+.guest-empty{ color:var(--ink-soft); font-size:14px; }
+
+/* ───────── seasonal photo ───────── */
+.season{ display:flex; flex-direction:column; gap:10px; }
+.season-frame{
+  position:relative;
+  aspect-ratio:1 / 1.1;
+  border:2px solid var(--ink);
+  border-radius:12px 225px 14px 255px / 255px 14px 225px 12px;
+  overflow:hidden;
+  background:var(--paper);
+}
+.season-frame img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  display:none;
+}
+.season-frame.has-photo img{ display:block; }
+.season-frame.has-photo .season-empty{ display:none; }
+.season-empty{
+  position:absolute; inset:0;
+  display:grid; place-content:center; justify-items:center; gap:10px;
+  text-align:center;
+  font-family:var(--title);
+  font-size:20px;
+  line-height:1.5;
+}
+.season-empty svg{
+  width:54px; height:54px;
+  fill:none; stroke:var(--accent); stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+.season-tabs{ display:flex; justify-content:center; gap:4px; }
+.season-tabs button{
+  border:0; background:transparent;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:14px;
+  color:var(--ink-soft);
+  cursor:pointer;
+}
+.season-tabs button[aria-selected="true"]{ background:var(--ink); color:var(--sheet); }
+
+/* ───────── footer ───────── */
+.foot{
+  margin-top:36px;
+  text-align:center;
+  font-size:12px;
+  color:var(--ink-soft);
+}
+
+/* ───────── mobile ───────── */
+@media (max-width:720px){
+  .map{ aspect-ratio:auto; height:auto; overflow:visible; }
+  .map-art{ position:relative; display:block; height:auto; }
+  .legend{
+    position:static;
+    grid-template-columns:repeat(2, 1fr);
+    padding:16px 16px 0;
+  }
+  .legend a{ grid-template-columns:22px auto; }
+  .legend svg{ order:-1; width:22px; height:22px; }
+  .legend span{ min-width:0; }
+  .guest{ grid-template-columns:1fr; }
+  .guest-form{ grid-template-columns:1fr; }
+  .guest-form button{ justify-self:end; }
+  .season{ max-width:360px; width:100%; margin-inline:auto; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; }
+}

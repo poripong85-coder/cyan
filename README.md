@@ -1,4 +1,26 @@
-# CYAN — gallery house
+# 시안 — 홈페이지
+
+## 홈 (`index.html`)
+
+손그림 스케치 그대로 옮긴 첫 화면입니다.
+
+```
+index.html            홈: 🏠 시안. / 지도 + 범례 / 방명록 + 계절별 사진
+assets/css/home.css   홈 디자인 (맨 위 :root 에서 색 변경)
+assets/js/home.js     지도 하이라이트 · 방명록 · 계절 사진
+gallery.html          갤러리 페이지 (범례의 '갤러리'를 누르면 이동)
+```
+
+- **지도 범례**: 시안스테이 · 북스테이 · 갤러리 · 공방. 마우스를 올리면 지도 속 같은 장소가 표시됩니다.
+  각 항목의 `href="#"`를 페이지 주소로 바꾸면 클릭 시 이동합니다 (지도 속 `<a class="place">`도 같이 바꾸기).
+- **계절별 사진**: `assets/img/seasons/`에 `spring.jpg`, `summer.jpg`, `autumn.jpg`, `winter.jpg`를 넣으면
+  자동으로 나옵니다. 처음엔 지금 계절이 선택됩니다. 사진이 없으면 손그림 아이콘이 보입니다.
+- **방명록**: 지금은 글을 쓴 사람의 브라우저에만 저장됩니다. 방문자끼리 서로의 글을 보려면
+  외부 서비스(예: Google Forms + Sheets, Firebase, giscus)를 연결해야 합니다.
+
+---
+
+# CYAN — gallery house (`gallery.html`)
 
 일러스트(로고)를 중심에 둔 심플한 갤러리 홈페이지. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다.
 
@@ -12,7 +34,7 @@ assets/img/favicon.svg    브라우저 탭 아이콘
 
 ## 미리보기
 
-`index.html`을 브라우저로 열면 그대로 보입니다. 또는
+`index.html`(홈)을 브라우저로 열면 그대로 보입니다. 또는
 
 ```bash
 python3 -m http.server 8000
@@ -21,7 +43,7 @@ python3 -m http.server 8000
 
 ## 내용 채우기
 
-`index.html`에서 `✏️` 표시가 붙은 주석만 찾아 고치면 됩니다.
+`gallery.html`에서 `✏️` 표시가 붙은 주석만 찾아 고치면 됩니다.
 
 | 위치 | 내용 |
 | --- | --- |
