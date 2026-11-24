@@ -58,59 +58,131 @@
 
 <h1 class="sr">시안 — 예술적으로 쉬다.</h1>
 
-<!-- 로고: 스케치의 집 그림 + 글씨 -->
-<a class="home-logo" href="index.html" aria-label="시안 처음">
-  <img src="assets/img/book/home-logo.png" alt="" width="114" height="142">
-  <span>시안.</span>
-</a>
-
-<!-- 큰 네모: 메뉴 + 스케치 그림 (자리는 스케치 그대로, 네모 기준 %) -->
-<section class="hm-frame" aria-label="시안 둘러보기">
-  <nav class="sk-menu" aria-label="주요 메뉴">
-    <a href="about.html"><span>시안 소개</span><img src="assets/img/book/menu-about.png" alt=""></a>
-    <a href="stay.html"><span>북스테이</span><img src="assets/img/book/menu-stay.png" alt=""></a>
-    <a href="gallery.html"><span>갤러리</span><img src="assets/img/book/menu-gallery.png" alt=""></a>
-    <a href="workshop.html"><span>공방</span><img src="assets/img/book/menu-workshop.png" alt=""></a>
+<header class="hp-top">
+  <a class="hp-logo" href="index.html">시안.</a>
+  <nav class="hp-nav" aria-label="주요 메뉴">
+    <a href="about.html">시안 소개</a>
+    <a href="stay.html">북스테이</a>
+    <a href="gallery.html">갤러리</a>
+    <a href="workshop.html">공방</a>
   </nav>
+</header>
 
-  <img class="map-river" src="assets/img/book/map-river.png" alt="" style="left:38.1%;top:43.2%;width:14.7%">
-  <a class="spot" href="stay.html" style="left:50.4%;top:31.5%;width:5.6%" aria-label="북스테이 (집 그림)">
-    <img src="assets/img/book/map-house.png" alt=""><span>북스테이</span>
-  </a>
-  <a class="spot" href="gallery.html" style="left:59.7%;top:43%;width:9.8%" aria-label="갤러리 (건물 그림)">
-    <img src="assets/img/book/map-gallery.png" alt=""><span>갤러리</span>
-  </a>
-  <a class="spot" href="about.html#visit" style="left:64.1%;top:68.5%;width:10.5%" aria-label="오시는 길 (자전거 그림)">
-    <img src="assets/img/book/map-bike.png" alt=""><span>오시는 길</span>
-  </a>
+<!-- 크레용 마을 그림: 집 · 갤러리 · 귤 · 자동차 · 항아리를 누르면 그 페이지로 -->
+<section class="hp-scene">
+<svg class="scene" viewBox="0 0 1200 520" role="group" aria-label="시안 마을 그림">
+<defs>
+  <!-- 크레용/파스텔: 가장자리 번짐 + 알갱이 -->
+  <filter id="pastel" x="-8%" y="-8%" width="116%" height="116%">
+    <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4" result="w"/>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="9" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 1.75" result="m"/>
+    <feComposite in="d" in2="m" operator="in" result="t"/>
+    <feGaussianBlur in="t" stdDeviation=".45"/>
+  </filter>
+  <!-- 펠트: 보송한 가장자리 + 얼룩 -->
+  <filter id="felt" x="-8%" y="-8%" width="116%" height="116%">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="2" result="w"/>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feGaussianBlur in="d" stdDeviation=".8" result="b"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="3" seed="11" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 -.08" result="spk"/>
+    <feComposite in="spk" in2="b" operator="in" result="spk2"/>
+    <feBlend in="spk2" in2="b" mode="soft-light"/>
+  </filter>
+  <!-- 수채 크레파스: 번진 면 + 진한 가장자리 -->
+  <filter id="water" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="6" result="w"/>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="12" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="13" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.3 1.45" result="m"/>
+    <feComposite in="d" in2="m" operator="in" result="t"/>
+    <feGaussianBlur in="t" stdDeviation=".6"/>
+  </filter>
+  <!-- 오려 붙인 종이: 살짝 들쭉날쭉한 가장자리 -->
+  <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="5" result="w"/>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <!-- 종이 결 -->
+  <filter id="paper">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="1" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .3 0 0 0 .14 0"/>
+  </filter>
+</defs>
+
+<g filter="url(#pastel)">
+  <rect width="1200" height="520" rx="8" fill="#F7EEC0"/>
+  <rect y="326" width="1200" height="194" fill="#A9D98C"/>
+  <path d="M0 462 C220 424 300 520 480 520 L0 520Z" fill="#8FC8E8"/>
+</g>
+<g filter="url(#pastel)"><ellipse cx="44.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 44.6 325.2)"/><ellipse cx="75.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 75.4 325.2)"/><ellipse cx="60" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="54.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M60 297.2 C55.8 308.4 64.2 319.6 60 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M48.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M54.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M65.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M71.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="164.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 164.6 325.2)"/><ellipse cx="195.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 195.4 325.2)"/><ellipse cx="180" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="174.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M180 297.2 C175.8 308.4 184.2 319.6 180 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M168.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M174.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M185.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M191.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="284.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 284.6 325.2)"/><ellipse cx="315.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 315.4 325.2)"/><ellipse cx="300" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="294.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M300 297.2 C295.8 308.4 304.2 319.6 300 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M288.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M294.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M305.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M311.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="404.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 404.6 325.2)"/><ellipse cx="435.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 435.4 325.2)"/><ellipse cx="420" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="414.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M420 297.2 C415.8 308.4 424.2 319.6 420 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M408.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M414.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M425.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M431.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="524.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 524.6 325.2)"/><ellipse cx="555.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 555.4 325.2)"/><ellipse cx="540" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="534.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M540 297.2 C535.8 308.4 544.2 319.6 540 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M528.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M534.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M545.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M551.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="644.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 644.6 325.2)"/><ellipse cx="675.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 675.4 325.2)"/><ellipse cx="660" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="654.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M660 297.2 C655.8 308.4 664.2 319.6 660 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M648.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M654.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M665.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M671.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="764.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 764.6 325.2)"/><ellipse cx="795.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 795.4 325.2)"/><ellipse cx="780" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="774.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M780 297.2 C775.8 308.4 784.2 319.6 780 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M768.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M774.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M785.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M791.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="884.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 884.6 325.2)"/><ellipse cx="915.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 915.4 325.2)"/><ellipse cx="900" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="894.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M900 297.2 C895.8 308.4 904.2 319.6 900 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M888.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M894.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M905.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M911.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="1004.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 1004.6 325.2)"/><ellipse cx="1035.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 1035.4 325.2)"/><ellipse cx="1020" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="1014.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M1020 297.2 C1015.8 308.4 1024.2 319.6 1020 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M1008.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1014.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1025.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1031.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><ellipse cx="1124.6" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(-20 1124.6 325.2)"/><ellipse cx="1155.4" cy="325.2" rx="15.399999999999999" ry="6.3" fill="#5FA458" transform="rotate(20 1155.4 325.2)"/><ellipse cx="1140" cy="314" rx="19.599999999999998" ry="17.5" fill="#B58256"/><ellipse cx="1134.4" cy="308.4" rx="8.399999999999999" ry="5.6" fill="#D2A678" opacity=".7"/><path d="M1140 297.2 C1135.8 308.4 1144.2 319.6 1140 330.8" stroke="#6E4628" stroke-width="2.8" fill="none"/><path d="M1128.8 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1134.4 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1145.6 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/><path d="M1151.2 304.2 q2.8 9.799999999999999 0 19.599999999999998" stroke="#7E5434" stroke-width="1.8199999999999998" fill="none"/></g>
+
+<a href="stay.html" aria-label="북스테이">
+  <g class="art" filter="url(#pastel)"><g>
+ <rect x="228.7" y="199.7" width="82.8" height="82.8" fill="#E7A493"/>
+ <polygon points="219.5,204.3 260.9,160.6 309.2,204.3" fill="#D9503F"/>
+ <rect x="300" y="156" width="138.0" height="126.49999999999999" fill="#E9A796"/>
+ <polygon points="286.2,162.9 369.0,45.60000000000001 451.79999999999995,162.9" fill="#E5483A"/>
+ <path d="M355.2 142.2 v-22 a13.799999999999999 13.799999999999999 0 0 1 27.599999999999998 0 v22z" fill="#F6D774"/>
+ <rect x="323.0" y="197.4" width="34.5" height="34.5" fill="#F6D774"/>
+ <rect x="380.5" y="213.5" width="34.5" height="69.0" fill="#9C5B4E"/>
+</g></g>
+  <g class="tag"><rect x="309.0" y="349" width="102" height="32" rx="14" fill="#FBF6E9" opacity=".9"/><text x="360" y="373" text-anchor="middle">북스테이</text></g>
+</a>
+<a href="gallery.html" aria-label="갤러리">
+  <g class="art" filter="url(#pastel)"><g>
+ <rect x="600" y="188" width="276.0" height="110.39999999999999" fill="#E9E3D6"/>
+ <rect x="772.5" y="188" width="103.49999999999999" height="110.39999999999999" fill="#CFC6B6"/>
+ <rect x="611.5" y="112.10000000000001" width="172.5" height="75.89999999999999" fill="#DDD5C6"/>
+ <rect x="772.5" y="171.9" width="105.8" height="16.099999999999998" fill="#6F6960"/>
+ <rect x="772.5" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="787.45" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="802.4" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="817.35" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="832.3" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="847.25" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/><rect x="862.2" y="158.1" width="5.75" height="16.099999999999998" fill="#6F6960"/>
+ <rect x="646.0" y="227.1" width="25.299999999999997" height="71.3" fill="#9C9385"/>
+ <rect x="703.5" y="137.4" width="39.099999999999994" height="13.799999999999999" fill="#9C9385"/>
+ <rect x="801.25" y="222.5" width="50.599999999999994" height="75.89999999999999" fill="#9C9385"/>
+</g></g>
+  <g class="tag"><rect x="696.5" y="349" width="83" height="32" rx="14" fill="#FBF6E9" opacity=".9"/><text x="738" y="373" text-anchor="middle">갤러리</text></g>
+</a>
+<a href="about.html" aria-label="시안 소개">
+  <g class="art" filter="url(#pastel)"><circle cx="1088" cy="84" r="37.800000000000004" fill="#F39124"/><circle cx="1077.5" cy="73.5" r="14.700000000000001" fill="#F8B556" opacity=".75"/><path d="M1088 48.3 q2.1 -10.5 6.300000000000001 -14.700000000000001" stroke="#4E7A3A" stroke-width="4.2" fill="none" stroke-linecap="round"/><ellipse cx="1109.0" cy="35.699999999999996" rx="18.900000000000002" ry="8.4" fill="#4E9A4A" transform="rotate(-24 1109.0 35.699999999999996)"/><circle cx="1088" cy="52.5" r="3.1500000000000004" fill="#C96F12"/></g>
+  <text class="small" x="1088" y="152" text-anchor="middle">시안 소개</text>
+</a>
+<a href="about.html#visit" aria-label="오시는 길">
+  <g class="art" filter="url(#pastel)"><path d="M842 461.08 q0 -21.32 16.4 -22.959999999999997 l9.84 -21.32 q3.28 -4.92 9.84 -4.92 h36.08 q6.56 0 9.84 4.92 l11.479999999999999 21.32 q18.04 1.64 18.04 22.959999999999997 v4.92 h-111.52z" fill="#6FA3DA"/><path d="M873.16 436.48 l7.38 -16.4 h19.68 v16.4z" fill="#DDEBF7"/><path d="M905.96 436.48 v-16.4 h13.12 l8.2 16.4z" fill="#DDEBF7"/><rect x="938.76" y="444.68" width="8.2" height="5.739999999999999" rx="2.46" fill="#F7D774"/><circle cx="868.24" cy="466" r="11.479999999999999" fill="#3B3A36"/><circle cx="868.24" cy="466" r="4.1" fill="#CFCAC0"/><circle cx="927.28" cy="466" r="11.479999999999999" fill="#3B3A36"/><circle cx="927.28" cy="466" r="4.1" fill="#CFCAC0"/></g>
+  <g class="tag"><rect x="839.5" y="481" width="121" height="32" rx="14" fill="#FBF6E9" opacity=".9"/><text x="900" y="505" text-anchor="middle">오시는 길</text></g>
+</a>
+<a href="workshop.html" aria-label="공방">
+  <g class="art" filter="url(#pastel)"><path d="M1066.64 411.2 L1085.36 411.2 L1085.36 420.56 C1108.76 433.04 1111.88 472.04 1091.6 484.52 L1060.4 484.52 C1040.12 472.04 1043.24 433.04 1066.64 420.56 Z" fill="#D98E62"/><path d="M1099.4 470.48 h40.56 c0 9.36 -7.800000000000001 14.040000000000001 -20.28 14.040000000000001 s-20.28 -4.68 -20.28 -14.040000000000001z" fill="#D98E62"/></g>
+  <g class="tag"><rect x="1056.0" y="481" width="64" height="32" rx="14" fill="#FBF6E9" opacity=".9"/><text x="1088" y="505" text-anchor="middle">공방</text></g>
+</a>
+<rect width="1200" height="520" rx="8" filter="url(#paper)" pointer-events="none"/>
+</svg>
 </section>
 
-<!-- 아래 네모: 방명록 + 계절별 사진 -->
-<section class="hm-guest" aria-labelledby="guestTitle">
-  <div class="hm-guest-body">
-    <h2 class="hm-label" id="guestTitle">방명록</h2>
-    <ul class="guest-list" id="guestList"></ul>
-    <button class="guest-open" type="button" id="guestOpen">한 줄 남기기 ✎</button>
-  </div>
-  <figure class="hm-season" id="season"><span class="hm-season-empty">계절별 사진</span></figure>
-</section>
-
-</main>
-
-<dialog class="modal" id="guestModal" aria-labelledby="guestModalTitle">
-  <div class="modal-in">
-    <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
-    <div class="modal-body">
-      <h2 class="modal-title" id="guestModalTitle">방명록</h2>
+<section class="hp-bottom">
+  <!-- 방명록: 왼쪽은 남긴 글, 오른쪽은 쓰는 칸 -->
+  <div class="hp-guest" aria-labelledby="guestTitle">
+    <div class="hp-notes">
+      <h2 class="hp-h" id="guestTitle">방명록</h2>
+      <ul class="notes" id="guestList"></ul>
+    </div>
+    <aside class="hp-write" aria-label="방명록 남기기">
+      <h3 class="hp-h hp-h--sm">한 줄 남기기 ✎</h3>
       <form id="guestForm" class="guest-form" novalidate>
         <div class="field"><label for="gName">이름</label><input id="gName" autocomplete="name" required maxlength="20"></div>
         <div class="field"><label for="gText">남기실 말</label><textarea id="gText" rows="3" required maxlength="300" placeholder="다녀가신 이야기를 들려주세요"></textarea></div>
-        <button class="btn" type="submit" id="guestSubmit">남기기</button>
+        <button class="hp-btn" type="submit" id="guestSubmit">남기기</button>
         <p class="form-msg" id="guestMsg" role="status"></p>
       </form>
-    </div>
+    </aside>
   </div>
-</dialog>
+
+  <!-- 계절별 사진 -->
+  <figure class="hp-season" id="season"></figure>
+</section>
+
+</main>
 </div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
