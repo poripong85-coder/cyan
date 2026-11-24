@@ -56,57 +56,53 @@
 
 <main id="main" class="home-main">
 
-<!-- ───────────────────────── 큰 틀: 메뉴 + 마을 그림 ───────────────────────── -->
-<section class="home-frame" aria-label="시안 둘러보기">
-  <nav class="home-menu" aria-label="주요 메뉴">
-    <a href="about.html"><span>시안 소개</span><img src="assets/img/book/icon-about.svg" alt=""></a>
-    <a href="stay.html"><span>북스테이</span><img src="assets/img/book/logo-house.svg" alt=""></a>
-    <a href="gallery.html"><span>갤러리</span><img src="assets/img/book/icon-gallery.png" alt=""></a>
-    <a href="workshop.html"><span>공방</span><img src="assets/img/book/icon-workshop.svg" alt=""></a>
+<!-- 홈은 손그림 그대로: assets/img/book/home-sketch.png 위에 누를 수 있는 자리만 얹었습니다.
+     그림을 바꾸면 아래 style 의 left/top/width/height (그림 기준 %) 를 맞춰 주세요. -->
+<div class="sketch">
+  <img class="sketch-img" src="assets/img/book/home-sketch.png" width="1011" height="1333"
+       alt="손으로 그린 시안 홈 화면: 왼쪽 위 집 그림과 '시안.' 글씨, 큰 네모 안 왼쪽에 시안 소개 · 북스테이 · 갤러리 · 공방 메뉴와 작은 그림, 오른쪽에 강과 집과 갤러리 건물과 자전거, 아래 네모에 방명록과 계절별 사진 칸">
+
+  <h1 class="sr">시안 — 예술적으로 쉬다.</h1>
+
+  <a class="spot" style="left:3.96%;top:0.60%;width:17.80%;height:5.25%" href="index.html" aria-label="시안 처음"></a>
+
+  <nav aria-label="주요 메뉴">
+    <a class="spot spot--line" style="left:3.46%;top:28.73%;width:19.29%;height:3.98%" href="about.html" aria-label="시안 소개"></a>
+    <a class="spot spot--line" style="left:3.46%;top:32.71%;width:19.29%;height:3.90%" href="stay.html" aria-label="북스테이"></a>
+    <a class="spot spot--line" style="left:3.46%;top:36.76%;width:19.29%;height:4.35%" href="gallery.html" aria-label="갤러리"></a>
+    <a class="spot spot--line" style="left:4.95%;top:41.11%;width:19.29%;height:5.10%" href="workshop.html" aria-label="공방"></a>
   </nav>
 
-  <!-- 마을 그림: 집 · 갤러리 · 자전거를 누르면 그 페이지로 -->
-  <div class="village">
-    <img class="village-river" src="assets/img/book/river.svg" alt="">
-    <a class="village-spot village-house" href="stay.html">
-      <img src="assets/img/book/icon-house.png" alt="" width="289" height="331">
-      <span>북스테이</span>
-    </a>
-    <a class="village-spot village-gallery" href="gallery.html">
-      <img src="assets/img/book/icon-gallery.png" alt="" width="676" height="351">
-      <span>갤러리</span>
-    </a>
-    <a class="village-spot village-bike" href="about.html#visit">
-      <img src="assets/img/book/bike.svg" alt="">
-      <span>오시는 길</span>
-    </a>
-  </div>
-</section>
+  <a class="spot spot--pic" style="left:48.27%;top:32.71%;width:5.93%;height:6.15%" href="stay.html" aria-label="북스테이 (집 그림)"><span>북스테이</span></a>
+  <a class="spot spot--pic" style="left:56.58%;top:38.26%;width:9.50%;height:6.45%" href="gallery.html" aria-label="갤러리 (건물 그림)"><span>갤러리</span></a>
+  <a class="spot spot--pic" style="left:60.14%;top:50.11%;width:10.58%;height:7.50%" href="about.html#visit" aria-label="오시는 길 (자전거 그림)"><span>오시는 길</span></a>
 
-<!-- ───────────────────────── 방명록 + 계절 사진 ───────────────────────── -->
-<section class="home-guest" aria-labelledby="guestTitle">
-  <div class="guest">
-    <h2 class="guest-title" id="guestTitle">방명록</h2>
+  <!-- 방명록: 그린 네모 안에 글이 들어갑니다 -->
+  <section class="sketch-guest" style="left:6.92%;top:73.37%;width:58.36%;height:19.35%" aria-label="방명록">
     <ul class="guest-list" id="guestList"></ul>
+    <button class="guest-open" type="button" id="guestOpen">한 줄 남기기 ✎</button>
+  </section>
 
-    <details class="guest-write">
-      <summary>한 줄 남기기</summary>
-      <form id="guestForm" novalidate>
+  <!-- 계절별 사진: 사진을 넣으면 그린 네모를 채웁니다 -->
+  <figure class="sketch-season" style="left:68.05%;top:72.62%;width:23.94%;height:22.13%" id="season"></figure>
+</div>
+
+</main>
+
+<dialog class="modal" id="guestModal" aria-labelledby="guestModalTitle">
+  <div class="modal-in">
+    <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
+    <div class="modal-body">
+      <h2 class="modal-title" id="guestModalTitle">방명록</h2>
+      <form id="guestForm" class="guest-form" novalidate>
         <div class="field"><label for="gName">이름</label><input id="gName" autocomplete="name" required maxlength="20"></div>
-        <div class="field"><label for="gText">남기실 말</label><textarea id="gText" rows="2" required maxlength="300" placeholder="다녀가신 이야기를 들려주세요"></textarea></div>
+        <div class="field"><label for="gText">남기실 말</label><textarea id="gText" rows="3" required maxlength="300" placeholder="다녀가신 이야기를 들려주세요"></textarea></div>
         <button class="btn" type="submit" id="guestSubmit">남기기</button>
         <p class="form-msg" id="guestMsg" role="status"></p>
       </form>
-    </details>
+    </div>
   </div>
-
-  <figure class="season" id="season">
-    <div class="season-photo" id="seasonPhoto"></div>
-    <figcaption id="seasonCaption">계절의 시안</figcaption>
-  </figure>
-</section>
-
-</main>
+</dialog>
 </div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>
