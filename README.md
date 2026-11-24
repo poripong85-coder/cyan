@@ -5,7 +5,7 @@
 그림은 HOUSE · GALLERY 펜 드로잉 한 장만 씁니다. 빌드 도구 없이 HTML·CSS·JS 파일만으로 동작합니다.
 
 ```
-index.html       표지(그림 아이콘으로 2·3·4장 바로 가기) · 서문 · 소개된 곳 · 차례 · 판권(연락처)
+index.html       홈 — 로고 · 큰 틀(메뉴 + 마을 그림, 그림을 누르면 이동) · 방명록 + 계절 사진
 about.html       1장 시안에 대하여 — 이름 · 두 채의 집 · 하는 일 · 이 집이 실린 곳 · 부록 오시는 길
 stay.html        2장 시안북스테이 — 방 · 머무는 법 · 예약 신청(달력, 요금 계산)
 workshop.html    3장 시안 공방 — 수업 · 수업 신청(회차, 인원)
@@ -41,6 +41,8 @@ python3 -m http.server 8000
 | `series` | 제작 시리즈. `status: 'archive'`면 지난 시리즈(판매 종료)로 표시 |
 | `products` | 시리즈별 제품. `soldOut: true`면 품절, `link`를 적으면 외부 스토어(스마트스토어 등)로 연결 |
 | `shipping` | 배송비, 무료 배송 기준 금액 |
+| `guestbook` | 홈 방명록에 보일 글. 홈에서 남긴 글은 메일로 오고, 실을 글만 여기에 옮겨 적습니다 |
+| `seasons` | 계절별 사진 — 오늘 날짜의 계절 사진이 홈에 자동으로 보입니다 |
 
 사진은 비워두면 아무것도 보이지 않고, `assets/img/`에 넣고 `image: 'assets/img/room-01.jpg'`처럼 경로를 적으면 그때만 나타납니다.
 
@@ -74,6 +76,8 @@ python3 -m http.server 8000
 | `gallery.png` | 4장 첫 페이지, 1장 그림 1 |
 | `icon-house.png`, `icon-gallery.png` | 표지의 바로 가기 아이콘 (원본 그림에서 글씨 없이 오린 것) |
 | `icon-workshop.svg` | 표지 · 3장의 공방 아이콘 (같은 펜 느낌으로 새로 그린 항아리와 그릇) |
+| `logo-house.svg` | 로고 "시안." 옆 작은 집 · 메뉴의 북스테이 아이콘 |
+| `icon-about.svg`, `river.svg`, `bike.svg` | 홈 메뉴 · 마을 그림 (자전거는 오시는 길로 연결) |
 | `favicon.png` | 브라우저 탭 아이콘 |
 
 원본을 더 선명한 파일로 바꾸고 싶으면 같은 이름의 투명 배경 PNG로 덮어쓰면 됩니다.
