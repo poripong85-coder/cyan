@@ -56,37 +56,44 @@
 
 <main id="main" class="home-main">
 
-<!-- 홈은 손그림 그대로: assets/img/book/home-sketch.png 위에 누를 수 있는 자리만 얹었습니다.
-     그림을 바꾸면 아래 style 의 left/top/width/height (그림 기준 %) 를 맞춰 주세요. -->
-<div class="sketch">
-  <img class="sketch-img" src="assets/img/book/home-sketch.png" width="1011" height="1333"
-       alt="손으로 그린 시안 홈 화면: 왼쪽 위 집 그림과 '시안.' 글씨, 큰 네모 안 오른쪽에 강과 집과 갤러리 건물과 자전거, 아래 네모에 방명록과 계절별 사진 칸">
+<h1 class="sr">시안 — 예술적으로 쉬다.</h1>
 
-  <h1 class="sr">시안 — 예술적으로 쉬다.</h1>
+<!-- 로고: 스케치의 집 그림 + 글씨 -->
+<a class="home-logo" href="index.html" aria-label="시안 처음">
+  <img src="assets/img/book/home-logo.png" alt="" width="114" height="142">
+  <span>시안.</span>
+</a>
 
-  <a class="spot" style="left:3.96%;top:0.60%;width:17.80%;height:5.25%" href="index.html" aria-label="시안 처음"></a>
-
-  <!-- 메뉴: 손글씨 글꼴 + 스케치에서 오린 아이콘 -->
-  <nav class="sk-menu" style="left:5%;top:28.6%;" aria-label="주요 메뉴">
+<!-- 큰 네모: 메뉴 + 스케치 그림 (자리는 스케치 그대로, 네모 기준 %) -->
+<section class="hm-frame" aria-label="시안 둘러보기">
+  <nav class="sk-menu" aria-label="주요 메뉴">
     <a href="about.html"><span>시안 소개</span><img src="assets/img/book/menu-about.png" alt=""></a>
     <a href="stay.html"><span>북스테이</span><img src="assets/img/book/menu-stay.png" alt=""></a>
     <a href="gallery.html"><span>갤러리</span><img src="assets/img/book/menu-gallery.png" alt=""></a>
     <a href="workshop.html"><span>공방</span><img src="assets/img/book/menu-workshop.png" alt=""></a>
   </nav>
 
-  <a class="spot spot--pic" style="left:48.27%;top:32.71%;width:5.93%;height:6.15%" href="stay.html" aria-label="북스테이 (집 그림)"><span>북스테이</span></a>
-  <a class="spot spot--pic" style="left:56.58%;top:38.26%;width:9.50%;height:6.45%" href="gallery.html" aria-label="갤러리 (건물 그림)"><span>갤러리</span></a>
-  <a class="spot spot--pic" style="left:60.14%;top:50.11%;width:10.58%;height:7.50%" href="about.html#visit" aria-label="오시는 길 (자전거 그림)"><span>오시는 길</span></a>
+  <img class="map-river" src="assets/img/book/map-river.png" alt="" style="left:38.1%;top:43.2%;width:14.7%">
+  <a class="spot" href="stay.html" style="left:50.4%;top:31.5%;width:5.6%" aria-label="북스테이 (집 그림)">
+    <img src="assets/img/book/map-house.png" alt=""><span>북스테이</span>
+  </a>
+  <a class="spot" href="gallery.html" style="left:59.7%;top:43%;width:9.8%" aria-label="갤러리 (건물 그림)">
+    <img src="assets/img/book/map-gallery.png" alt=""><span>갤러리</span>
+  </a>
+  <a class="spot" href="about.html#visit" style="left:64.1%;top:68.5%;width:10.5%" aria-label="오시는 길 (자전거 그림)">
+    <img src="assets/img/book/map-bike.png" alt=""><span>오시는 길</span>
+  </a>
+</section>
 
-  <!-- 방명록: 그린 네모 안에 글이 들어갑니다 -->
-  <section class="sketch-guest" style="left:6.92%;top:73.37%;width:58.36%;height:19.35%" aria-label="방명록">
+<!-- 아래 네모: 방명록 + 계절별 사진 -->
+<section class="hm-guest" aria-labelledby="guestTitle">
+  <div class="hm-guest-body">
+    <h2 class="hm-label" id="guestTitle">방명록</h2>
     <ul class="guest-list" id="guestList"></ul>
     <button class="guest-open" type="button" id="guestOpen">한 줄 남기기 ✎</button>
-  </section>
-
-  <!-- 계절별 사진: 사진을 넣으면 그린 네모를 채웁니다 -->
-  <figure class="sketch-season" style="left:68.05%;top:72.62%;width:23.94%;height:22.13%" id="season"></figure>
-</div>
+  </div>
+  <figure class="hm-season" id="season"><span class="hm-season-empty">계절별 사진</span></figure>
+</section>
 
 </main>
 
