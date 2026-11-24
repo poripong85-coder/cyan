@@ -168,6 +168,19 @@ button, input, textarea{ font-family:inherit; }
 .spot--pic:hover span, .spot--pic:focus-visible span{ opacity:1; transform:translate(-50%,4px); }
 .spot:focus-visible{ outline:1.5px dashed var(--blue); outline-offset:2px; }
 
+/* 메뉴 (그림 안 왼쪽) */
+.sk-menu{ position:absolute; display:grid; gap:1.5cqw; }
+.sk-menu a{ display:grid; grid-template-columns:16.5cqw auto; align-items:center; width:fit-content; }
+.sk-menu span{
+  font-family:var(--pen); font-size:max(14px,3.9cqw); line-height:1.25; color:var(--ink); width:fit-content;
+  -webkit-text-stroke:.35px currentColor;   /* 펜 선 굵기에 맞춤 */
+  background:linear-gradient(transparent 58%, rgba(43,77,143,0) 58% 90%, transparent 90%);
+  transition:background .25s, color .2s;
+}
+.sk-menu img{ height:max(14px,3.5cqw); width:auto; transition:transform .35s var(--ease); }
+.sk-menu a:hover span, .sk-menu a:focus-visible span{ color:var(--blue); background:linear-gradient(transparent 58%, rgba(43,77,143,.16) 58% 90%, transparent 90%); }
+.sk-menu a:hover img, .sk-menu a:focus-visible img{ transform:rotate(-8deg) scale(1.1); }
+
 /* 방명록 칸 */
 .sketch-guest{ position:absolute; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; padding-top:1cqw; }
 .sketch-guest .guest-list{ overflow:hidden; }
