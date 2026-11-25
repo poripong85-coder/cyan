@@ -123,7 +123,7 @@
  <rect x="842.96" y="269.84" width="49.68000000000001" height="32.400000000000006" fill="#B5D5E8"/>
  <rect x="767.36" y="213.68" width="142.56" height="34.56" fill="url(#breeze)"/>
 </g></g><g class="tag"><rect x="693.5" y="349" width="83" height="32" rx="14" fill="#FFFBEE" opacity=".95"/><text x="735" y="373" text-anchor="middle">갤러리</text></g></a>
-<a href="about.html" aria-label="시안 소개"><g class="art" filter="url(#pastel)"><circle cx="1088" cy="84" r="37.800000000000004" fill="#FFB534"/><circle cx="1077.5" cy="73.5" r="14.700000000000001" fill="#FFD77E" opacity=".75"/><path d="M1088 48.3 q2.1 -10.5 6.300000000000001 -14.700000000000001" stroke="#5A8E44" stroke-width="4.2" fill="none" stroke-linecap="round"/><ellipse cx="1109.0" cy="35.699999999999996" rx="18.900000000000002" ry="8.4" fill="#6DB767" transform="rotate(-24 1109.0 35.699999999999996)"/><circle cx="1088" cy="52.5" r="3.1500000000000004" fill="#D9921C"/></g><text class="small" x="1088" y="152" text-anchor="middle">시안 소개</text></a>
+<a href="#letters" id="tangerine" aria-label="시안의 글 — 브런치 · 쓴 글 · 뉴스레터"><g class="art" filter="url(#pastel)"><circle cx="1088" cy="84" r="37.800000000000004" fill="#FFB534"/><circle cx="1077.5" cy="73.5" r="14.700000000000001" fill="#FFD77E" opacity=".75"/><path d="M1088 48.3 q2.1 -10.5 6.300000000000001 -14.700000000000001" stroke="#5A8E44" stroke-width="4.2" fill="none" stroke-linecap="round"/><ellipse cx="1109.0" cy="35.699999999999996" rx="18.900000000000002" ry="8.4" fill="#6DB767" transform="rotate(-24 1109.0 35.699999999999996)"/><circle cx="1088" cy="52.5" r="3.1500000000000004" fill="#D9921C"/></g><text class="small" x="1088" y="152" text-anchor="middle">시안의 글</text></a>
 <a href="about.html#visit" aria-label="오시는 길"><g class="art" filter="url(#pastel)"><path d="M842 461.08 q0 -21.32 16.4 -22.959999999999997 l9.84 -21.32 q3.28 -4.92 9.84 -4.92 h36.08 q6.56 0 9.84 4.92 l11.479999999999999 21.32 q18.04 1.64 18.04 22.959999999999997 v4.92 h-111.52z" fill="#8FBEE3"/><path d="M873.16 436.48 l7.38 -16.4 h19.68 v16.4z" fill="#E8F4FF"/><path d="M905.96 436.48 v-16.4 h13.12 l8.2 16.4z" fill="#E8F4FF"/><rect x="938.76" y="444.68" width="8.2" height="5.739999999999999" rx="2.46" fill="#F7D774"/><circle cx="868.24" cy="466" r="11.479999999999999" fill="#5A4A40"/><circle cx="868.24" cy="466" r="4.1" fill="#CFCAC0"/><circle cx="927.28" cy="466" r="11.479999999999999" fill="#5A4A40"/><circle cx="927.28" cy="466" r="4.1" fill="#CFCAC0"/></g><g class="tag"><rect x="839.5" y="481" width="121" height="32" rx="14" fill="#FFFBEE" opacity=".95"/><text x="900" y="505" text-anchor="middle">오시는 길</text></g></a>
 <a href="workshop.html" aria-label="공방"><g class="art" filter="url(#pastel)"><path d="M1066.64 411.2 L1085.36 411.2 L1085.36 420.56 C1108.76 433.04 1111.88 472.04 1091.6 484.52 L1060.4 484.52 C1040.12 472.04 1043.24 433.04 1066.64 420.56 Z" fill="#E9AA84"/><path d="M1099.4 470.48 h40.56 c0 9.36 -7.800000000000001 14.040000000000001 -20.28 14.040000000000001 s-20.28 -4.68 -20.28 -14.040000000000001z" fill="#E9AA84"/></g><g class="tag"><rect x="1056.0" y="481" width="64" height="32" rx="14" fill="#FFFBEE" opacity=".95"/><text x="1088" y="505" text-anchor="middle">공방</text></g></a><rect width="1200" height="520" rx="8" filter="url(#paper)" pointer-events="none"/></svg>
 </section>
@@ -151,6 +151,37 @@
 </section>
 
 </main>
+
+<!-- 귤을 누르면: 시안의 글 (브런치 · 쓴 글 · 뉴스레터) -->
+<dialog class="modal" id="lettersModal" aria-labelledby="lettersTitle">
+  <div class="modal-in">
+    <button class="modal-x" type="button" data-close aria-label="닫기">×</button>
+    <div class="modal-body">
+      <h2 class="modal-title" id="lettersTitle">시안의 글</h2>
+      <p class="lt-intro">시안에서 보내는 이야기들이에요.</p>
+
+      <section class="lt-sec">
+        <h3 class="lt-h">브런치</h3>
+        <div id="ltBrunch"></div>
+      </section>
+
+      <section class="lt-sec">
+        <h3 class="lt-h">내가 쓴 글</h3>
+        <ul class="lt-list" id="ltList"></ul>
+      </section>
+
+      <section class="lt-sec">
+        <h3 class="lt-h">시안 뉴스레터</h3>
+        <p class="lt-note">계절마다 시안의 소식을 편지로 보내드려요.</p>
+        <form class="nl-form" id="nlForm" novalidate>
+          <div class="field"><label class="sr" for="nlEmail">이메일</label><input id="nlEmail" type="email" autocomplete="email" required placeholder="이메일 주소"></div>
+          <button class="hp-btn" type="submit" id="nlSubmit">구독하기</button>
+        </form>
+        <p class="form-msg" id="nlMsg" role="status"></p>
+      </section>
+    </div>
+  </div>
+</dialog>
 </div><!-- /.sheet -->
 
 <script src="assets/js/data.js" defer></script>

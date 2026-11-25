@@ -1,4 +1,4 @@
-/* CYAN — 홈: 방명록 (남긴 글 · 쓰는 칸) · 계절 사진 (data.js 에서 자동) */
+/* CYAN — 홈: 귤 → 시안의 글 · 방명록 (남긴 글 · 쓰는 칸) · 계절 사진 (data.js 에서 자동) */
 (function () {
   'use strict';
 
@@ -35,6 +35,46 @@
     }).catch(function () {
       msg.textContent = '보내지 못했어요. 잠시 후 다시 해 주세요.';
       btn.disabled = false;
+    });
+  });
+
+  /* 귤 → 시안의 글 (브런치 · 쓴 글 · 뉴스레터) ------------------- */
+  var site = d.site || {};
+  var letters = u.dialog($('lettersModal'));
+  var openLetters = function (e) { if (e) e.preventDefault(); letters.open(); };
+  $('tangerine').addEventListener('click', openLetters);
+  $('tangerine').addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') openLetters(e); });
+  if (location.hash === '#letters') openLetters();
+
+  $('ltBrunch').innerHTML = site.brunch
+    ? '<a class="lt-brunch" href="' + u.esc(site.brunch) + '" target="_blank" rel="noopener">브런치에서 시안의 글 보기 ↗</a>'
+    : '<p class="lt-empty">브런치 주소를 준비하고 있어요.</p>';
+
+  var ws = d.writings || [];
+  $('ltList').innerHTML = ws.length ? ws.slice(0, 8).map(function (w) {
+    var title = '<span class="lt-title">' + u.esc(w.title) + '</span>';
+    return '<li>' + (w.url ? '<a href="' + u.esc(w.url) + '" target="_blank" rel="noopener">' + title + ' <span aria-hidden="true">↗</span></a>' : title) +
+      (w.summary ? '<p class="lt-sum">' + u.esc(w.summary) + '</p>' : '') +
+      (w.date ? '<p class="lt-date">' + u.dateLabel(w.date, false) + '</p>' : '') + '</li>';
+  }).join('') : '<li class="lt-empty">곧 글을 모아 둘게요.</li>';
+
+  var nl = $('nlForm');
+  nl.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = $('nlMsg');
+    msg.textContent = '';
+    if (!u.validate(nl)) { msg.textContent = '이메일 주소를 확인해 주세요.'; return; }
+    var email = $('nlEmail').value.trim();
+    if (site.newsletterUrl) {           // 스티비 · 메일리 등 구독 페이지로
+      window.open(site.newsletterUrl, '_blank', 'noopener');
+      return;
+    }
+    $('nlSubmit').disabled = true;
+    u.submit('[뉴스레터 구독] ' + email, { '구분': '시안 뉴스레터 구독', '이메일': email }).then(function (how) {
+      nl.innerHTML = '<p class="guest-thanks">고맙습니다! ' + (how === 'mail' ? '메일 앱에 신청이 채워졌어요. 보내 주시면 ' : '') + '다음 편지부터 보내드릴게요.</p>';
+    }).catch(function () {
+      msg.textContent = '보내지 못했어요. 잠시 후 다시 해 주세요.';
+      $('nlSubmit').disabled = false;
     });
   });
 

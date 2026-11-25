@@ -1,4 +1,4 @@
-/* CYAN — 시안북스테이: 객실 소개 · 날짜 선택 · 예약 신청 */
+/* CYAN — 시안북스테이: 독채 소개 · 날짜 선택 · 예약 신청 */
 (function () {
   'use strict';
 
@@ -52,7 +52,7 @@
     };
   };
 
-  /* 객실 소개 ------------------------------------------------------ */
+  /* 독채 소개 ------------------------------------------------------ */
   $('stayRooms').innerHTML = S.rooms.map(function (r, i) {
     return '<article class="room reveal' + (i % 2 ? ' room--flip' : '') + '">' +
       '<div class="room-visual">' + u.frame(r.image, r.name, 'wide') + '</div>' +
@@ -65,7 +65,7 @@
           '<div><dt>인원</dt><dd>기준 ' + r.capacity + '인 · 최대 ' + r.maxCapacity + '인</dd></div>' +
           '<div><dt>1박</dt><dd>평일 ' + u.won(r.weekday) + ' · 주말 ' + u.won(r.weekend) + '</dd></div>' +
         '</dl>' +
-        '<div class="show-actions"><a class="btn" href="#book" data-room="' + u.esc(r.id) + '">이 방 예약하기</a></div>' +
+        '<div class="show-actions"><a class="btn" href="#book" data-room="' + u.esc(r.id) + '">독채 예약하기</a></div>' +
       '</div>' +
     '</article>';
   }).join('');
@@ -74,7 +74,7 @@
   $('stayIncluded').innerHTML = (S.included || []).map(function (t) { return '<li>' + u.esc(t) + '</li>'; }).join('');
   $('stayNotice').innerHTML = (S.notice || []).map(function (t) { return '<li>' + u.esc(t) + '</li>'; }).join('');
 
-  /* 객실 고르기 ---------------------------------------------------- */
+  /* 숙소 고르기 ---------------------------------------------------- */
   $('stayPick').innerHTML = S.rooms.map(function (r, i) {
     return '<label class="pick-item">' +
       '<input type="radio" name="room" value="' + u.esc(r.id) + '"' + (i === 0 ? ' checked' : '') + '>' +
@@ -210,7 +210,7 @@
   var sumPairs = function () {
     var r = state.room, p = price();
     var pairs = [
-      ['객실', u.esc(r.name)],
+      ['숙소', u.esc(r.name)],
       ['체크인', state.ci ? u.dateLabel(state.ci) + ' ' + S.checkIn : '—'],
       ['체크아웃', state.co ? u.dateLabel(state.co) + ' ' + S.checkOut : '—'],
       ['인원', state.guests + '명']
@@ -245,7 +245,7 @@
 
     u.submit('[북스테이 예약] ' + u.dateLabel(state.ci, false) + ' ' + state.room.name + ' · ' + $('sName').value, {
       '구분': '시안북스테이 숙박 예약',
-      '객실': state.room.name,
+      '숙소': state.room.name,
       '체크인': u.dateLabel(state.ci) + ' ' + S.checkIn,
       '체크아웃': u.dateLabel(state.co) + ' ' + S.checkOut,
       '박수': nights() + '박',
